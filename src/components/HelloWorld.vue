@@ -1,34 +1,44 @@
 <template>
   <div class="hello">
-   
+        <div>{{msg}}</div>
+        <button @click="userLogin('true')">点击改变userLogin:{{$store.state.isLogin}}</button>
+        <button @click="yh('22')">点击改变yhid:{{$store.state.yhid}}</button>
+        <h3>{{yhid}}</h3>
   </div>
 </template>
 
 <script>
+import {mapState,mapActions,mapGetters} from 'vuex'
 export default {
   name: 'HelloWorld',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  computed:{
+    ...mapState([
+     'yhid'
+    ])
+  },
+  methods:{
+    // userLogin(){
+    //   this.$store.dispatch("userLogin",true)
+    // },
+    // yh(){
+    //   this.$store.dispatch("yh",77)
+    // },
+   ...mapActions([
+                'userLogin',
+                'yh'
+             
+            ]),
+    
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+
 </style>
