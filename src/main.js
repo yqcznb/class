@@ -4,6 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'
+// 引入axios，并加到原型链中
+import axios from 'axios';
+Vue.prototype.$axios = axios;
+import QS from 'qs'
+Vue.prototype.qs = QS;
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
