@@ -55,6 +55,7 @@
           </el-menu-item>
         </el-menu>
   </el-col>
+   <el-footer>Footer</el-footer>
   </div>
 </template>
 
@@ -83,22 +84,21 @@ export default {
 
 <style>
  .zujian{
-  width: 120px;
- position:fixed; bottom:0; left:0;
+  position:fixed;
+  bottom:0;
+  left:0;
  }
  .el-submenu .el-menu-item {
     height: 50px;
     line-height: 50px;
     padding: 0;
     min-width: 50px;
-     padding-left: 0px;
+    padding-left: 0px;
  }
  .el-menu-item.is-active{
     background-color:lightcyan;
     color:#fff;
     padding-left: 0px;
  }
- .element.style{
-   padding-left: 0px;
- }
+
 </style>
