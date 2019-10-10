@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import stu_index from '@/components/stu_index/stu_index'
-import index from '@/components/index'
 import login from '@/components/login/login'
 
 
