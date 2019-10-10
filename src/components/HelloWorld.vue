@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+        <daohang></daohang>
         <div>{{msg}}</div>
         <button @click="userLogin('true')">点击改变userLogin:{{$store.state.isLogin}}</button>
         <button @click="yh('22')">点击改变yhid:{{$store.state.yhid}}</button>
@@ -17,6 +18,7 @@
 
 <script>
 import {mapState,mapActions,mapGetters} from 'vuex'
+import daohang from "@/components/Common/zujian"
 export default {
   name: 'HelloWorld',
   data () {
@@ -24,6 +26,9 @@ export default {
       msg: 'Welcome to Your Vue.js App',
       value: true
     }
+  },
+  components:{
+    daohang
   },
   computed:{
     ...mapState([
