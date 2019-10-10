@@ -2,22 +2,23 @@
   <div class="zujian">
        <el-col :span="12"> 
         <el-menu
-          default-active="2"
+          default-active="4"
           class="el-menu-vertical-demo"
           @open="handleOpen"
           @close="handleClose"
           background-color="#545c64"
           text-color="#fff"
-          active-text-color="#ffd04b">
-          <el-menu-item index="2">
+          active-text-color="#ffd04b"
+         >
+          <el-menu-item index="1">
             <i class="iconfont iconshezhi"></i>
             <span slot="title">设置</span>
           </el-menu-item>
-          <el-menu-item index="3">
+          <el-menu-item index="2">
             <i class="iconfont iconxinxi1"></i>
             <span slot="title">信息</span>
           </el-menu-item>
-           <el-submenu index="1">
+           <el-submenu index="3">
             <template slot="title">
               <i class="iconfont iconkechengbiao"></i>
               <span>课程表</span>
