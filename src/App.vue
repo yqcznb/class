@@ -18,7 +18,6 @@ body{
 
 }
 #app {
- 
   text-align: center;
 }
 </style>

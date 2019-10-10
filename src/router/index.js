@@ -16,16 +16,7 @@ export default new Router({
       component: login
     },
     {
-      path: '/zujian',
-      name: 'zujian',
-      component: zujian
-    },
-    // {
-    //   path: '/index',
-    //   name: 'index',
-    //   component: index
-    // },
-    {
+
       path: '/stu_index',
       name: 'stu_index',
       component: stu_index

@@ -8,33 +8,50 @@
           @close="handleClose"
           background-color="#545c64"
           text-color="#fff"
-          active-text-color="#ffd04b"
          >
           <el-menu-item index="1">
-            <i class="iconfont iconshezhi"></i>
-            <span slot="title">设置</span>
+            <el-tooltip class="item" effect="dark" content="设置" placement="right">
+             <i class="iconfont iconshezhi"></i>
+            </el-tooltip>
           </el-menu-item>
           <el-menu-item index="2">
-            <i class="iconfont iconxinxi1"></i>
-            <span slot="title">信息</span>
+             <el-tooltip class="item" effect="dark" content="信息" placement="right">
+                <i class="iconfont iconxinxi1"></i>
+            </el-tooltip>
           </el-menu-item>
            <el-submenu index="3">
             <template slot="title">
-              <i class="iconfont iconkechengbiao"></i>
-              <span>课程表</span>
+              <el-tooltip class="item" effect="dark" content="课程表" placement="right">
+                <i class="iconfont iconkechengbiao"></i>
+            </el-tooltip>
             </template>
             <el-menu-item-group>
-              <template slot="title">分组一</template>
-              <el-menu-item index="1-1">选项1</el-menu-item>
-              <el-menu-item index="1-2">选项2</el-menu-item>
+              <el-menu-item index="1-1" style='padding-left:0px!important;'>
+                  <el-tooltip class="item" effect="dark" content="上传" placement="right">
+                  <i class="iconfont iconiconfontshangchuan"></i>
+                  </el-tooltip>
+              </el-menu-item>
+               <el-menu-item index="1-2" style='padding-left:0px!important;'>
+                  <el-tooltip class="item" effect="dark" content="显示" placement="right">
+                  <i class="iconfont iconxianshi"></i>
+                  </el-tooltip>
+              </el-menu-item>
+               <el-menu-item index="1-3" style='padding-left:0px!important;'>
+                  <el-tooltip class="item" effect="dark" content="模板上传下载" placement="right">
+                  <i class="iconfont iconmobanshangchuanxiazai"></i>
+                  </el-tooltip>
+              </el-menu-item>
+               <el-menu-item index="1-4" style='padding-left:0px!important;'>
+                  <el-tooltip class="item" effect="dark" content="添加" placement="right">
+                  <i class="iconfont icontianjia"></i>
+                  </el-tooltip>
+              </el-menu-item>
             </el-menu-item-group>
-            <el-menu-item-group title="分组2">
-              <el-menu-item index="1-3">选项3</el-menu-item>
-            </el-menu-item-group>   
           </el-submenu>
           <el-menu-item index="4">
-            <i class="iconfont iconzhuye1"></i>
-            <span slot="title">主页</span>
+            <el-tooltip class="item" effect="dark" content="主页" placement="right">
+               <i class="iconfont iconzhuye1"></i>
+            </el-tooltip>
           </el-menu-item>
         </el-menu>
   </el-col>
@@ -53,12 +70,35 @@ export default {
     
   },
   methods:{
-   
+    handleOpen(key, keyPath) {
+        console.log(key, keyPath);
+      },
+      handleClose(key, keyPath) {
+        console.log(key, keyPath);
+      }
   }
 }
 </script>
 
 
-<style scoped>
- 
+<style>
+ .zujian{
+  width: 120px;
+ position:fixed; bottom:0; left:0;
+ }
+ .el-submenu .el-menu-item {
+    height: 50px;
+    line-height: 50px;
+    padding: 0;
+    min-width: 50px;
+     padding-left: 0px;
+ }
+ .el-menu-item.is-active{
+    background-color:lightcyan;
+    color:#fff;
+    padding-left: 0px;
+ }
+ .element.style{
+   padding-left: 0px;
+ }
 </style>
