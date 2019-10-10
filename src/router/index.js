@@ -17,6 +17,12 @@ export default new Router({
     },
     {
 
+      path: '/zujian',
+      name: 'zujian',
+      component: zujian
+    },
+    {
+
       path: '/stu_index',
       name: 'stu_index',
       component: stu_index
