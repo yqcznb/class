@@ -84,6 +84,7 @@ export default {
 
 <style>
  .zujian{
+  width: 120px;
   position:fixed;
   bottom:0;
   left:0;
@@ -100,5 +101,7 @@ export default {
     color:#fff;
     padding-left: 0px;
  }
-
+ .element.style{
+   padding-left: 0px;
+ }
 </style>
