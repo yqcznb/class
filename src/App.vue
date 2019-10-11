@@ -22,11 +22,11 @@ export default {
     this.backimg_width = backimg_dom.offsetWidth;
     this.backimg_height= backimg_dom.offsetHeight;
 
-    if((this.backimg_width / this.backimg_height) > (this.wind_width / this.wind_heigt)) {
-      backimg_dom.style.height = '100%';
+    if((this.backimg_width / this.backimg_height) < (this.wind_width / this.wind_heigt)) {
+      backimg_dom.style.width = '100%';
     }
     else {
-      backimg_dom.style.width = '100%';
+      backimg_dom.style.height = '100%';
     }
         
     window.onresize = () => {
@@ -65,6 +65,7 @@ body{
   margin: 0;
 }
 #app {
+  font-family: '造字工房力黑（非商用）';
   text-align: center;
 }
 .login_backimg {
