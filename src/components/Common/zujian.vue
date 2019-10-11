@@ -1,16 +1,15 @@
 <template>
   <div class="zujian">
-       <el-col :span="12"> 
         <el-menu
           default-active="4"
           class="el-menu-vertical-demo"
           @open="handleOpen"
           @close="handleClose"
-          background-color="#545c64"
+          background-color="#222"
           text-color="#fff"
          >
           <el-menu-item index="1">
-            <el-tooltip class="item" effect="dark" content="设置" placement="right">
+            <el-tooltip class="item" effect="dark" content="设置" placement="right" style='padding-left:0px!important;'>
              <i class="iconfont iconshezhi"></i>
             </el-tooltip>
           </el-menu-item>
@@ -54,8 +53,7 @@
             </el-tooltip>
           </el-menu-item>
         </el-menu>
-  </el-col>
-   <el-footer>Footer</el-footer>
+   
   </div>
 </template>
 
@@ -84,22 +82,34 @@ export default {
 
 <style>
  .zujian{
-  width: 120px;
+  width: 66px;
   position:fixed;
   bottom:0;
   left:0;
+  background-color: #222;
+  opacity:0.99
  }
+ .el-menu {
+    border-right: solid 1px #222;
+    }
  .el-submenu .el-menu-item {
-    height: 50px;
-    line-height: 50px;
+    height: 66px;
+    line-height: 66px;
     padding: 0;
     min-width: 50px;
     padding-left: 0px;
  }
+  .el-menu-item {
+    height: 70px;
+    line-height: 70px;
+  }
  .el-menu-item.is-active{
-    background-color:lightcyan;
+   
     color:#fff;
     padding-left: 0px;
+ }
+ .iconfont{
+   font-size: 28px;
  }
  
 </style>
