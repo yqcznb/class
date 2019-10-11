@@ -1,5 +1,6 @@
 <template>
-  <div class="zujian">
+<div>
+  <div class="gzujian">
         <el-menu
           default-active="4"
           class="el-menu-vertical-demo"
@@ -8,12 +9,12 @@
           background-color="#222"
           text-color="#fff"
          >
-          <el-menu-item index="1">
-            <el-tooltip class="item" effect="dark" content="设置" placement="right" style='padding-left:0px!important;'>
+          <el-menu-item index="1" style='padding-left:18px!important;'>
+            <el-tooltip class="item" effect="dark" content="设置" placement="right" >
              <i class="iconfont iconshezhi"></i>
             </el-tooltip>
           </el-menu-item>
-          <el-menu-item index="2">
+          <el-menu-item index="2" style='padding-left:18px!important;'>
              <el-tooltip class="item" effect="dark" content="信息" placement="right">
                 <i class="iconfont iconxinxi1"></i>
             </el-tooltip>
@@ -47,26 +48,28 @@
               </el-menu-item>
             </el-menu-item-group>
           </el-submenu>
-          <el-menu-item index="4">
+          <el-menu-item index="4" style='padding-left:18px!important;'>
             <el-tooltip class="item" effect="dark" content="主页" placement="right">
                <i class="iconfont iconzhuye1"></i>
             </el-tooltip>
           </el-menu-item>
         </el-menu>
-   
   </div>
+  <but></but>
+</div>
 </template>
 
 <script>
+import but from '../Common/but'
 export default {
-  name: 'zujain',
+  name: 'gzujian',
   data () {
     return {
      
     }
   },
-  computed:{
-    
+  components:{
+    but,
   },
   methods:{
     handleOpen(key, keyPath) {
@@ -81,7 +84,8 @@ export default {
 
 
 <style>
- .zujian{
+ .gzujian{
+  z-index: 130;
   width: 66px;
   position:fixed;
   bottom:0;
@@ -90,7 +94,7 @@ export default {
   opacity:0.99
  }
  .el-menu {
-    border-right: solid 1px #222;
+    border-right: solid 0px #222;
     }
  .el-submenu .el-menu-item {
     height: 66px;
@@ -109,7 +113,7 @@ export default {
     padding-left: 0px;
  }
  .iconfont{
-   font-size: 28px;
+   font-size: 25px;
  }
  
 </style>

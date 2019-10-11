@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import login from '@/components/login/login'
 import stu_index from '@/components/stu_index/stu_index'
-import zujian from '@/components/Common/zujian'
 import tch_index from '@/components/teacher/tch_index'
 
 
@@ -14,12 +13,6 @@ export default new Router({
       path: '/',
       name: 'login',
       component: login
-    },
-    {
-
-      path: '/zujian',
-      name: 'zujian',
-      component: zujian
     },
     {
 
