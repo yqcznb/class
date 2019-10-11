@@ -51,20 +51,15 @@ export default {
 }
 .main{
     position: absolute;
-    width: 80%;
+    width: 86%;
     height: 80%;
-    left: 10%;
-    top: 10%;
-    background-image: url('../../assets/images/矩形渐变.png');
+    left: 7%;
+    top: 5%;
+    background: rgb(0, 0, 0);
+    opacity: 0.7;
     background-size: 100%;
     background-repeat: no-repeat;
-    .login_backimg {
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        z-index: -1;
-    }
+    box-shadow: 0 0 15px 15px rgb(0, 0, 0);
     .main-title{
         font-family: "Helvetica Neue";
         font-weight: bold;
@@ -74,7 +69,7 @@ export default {
         letter-spacing: 6.8px;
         line-height: 43px;
         text-decoration: none;
-        margin-top: 5%;
+        margin-top: 3%;
         .hr-inline{
             display: inline-block;
             height: 5px;
