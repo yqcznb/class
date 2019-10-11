@@ -101,7 +101,5 @@ export default {
     color:#fff;
     padding-left: 0px;
  }
- .element.style{
-   padding-left: 0px;
- }
+ 
 </style>
