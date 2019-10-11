@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import tabbar from '../Common/zujian'
+import tabbar from '../Common/gzujian'
 export default {
     props: {
 
