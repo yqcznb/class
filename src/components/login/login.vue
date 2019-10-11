@@ -12,10 +12,10 @@
             </div>
             <div class="login_input_box">
                 <div class="login_input_count">
-                    <input type="text" name="" id="input_count">
+                    <input type="text" name="" autocomplete="off" placeholder="用户账号" id="input_count">
                 </div>
                 <div class="login_input_pass">
-
+                    <input type="password" name="" autocomplete="off" placeholder="用户密码" id="input_pass"> <span class="iconfont iconenter"></span>
                 </div>
             </div>
         </div>
@@ -49,14 +49,13 @@ export default {
         overflow: hidden;
     }
     .login_box {
-        border: 1px solid red;
-        width: 40.5ex;
+        width: 45.5ex;
         margin: 0 auto;
     }
     .login_img_box {
         width: 100%;
         height: 37ex;
-        margin: 3ex auto;
+        margin: 3ex auto 4em;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -78,16 +77,39 @@ export default {
         width: 75%;
         /* height: 10em; */
         margin: 0 auto;
-        border: 1px solid blue;
     }
-    .login_input_count {
+    .login_input_count,.login_input_pass {
         width: 100%;
-        height: 2em;
+        height: 5ex;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1em;
+    }
+    #input_count,#input_pass {
+        height: 100%;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        margin: 0;
+        text-indent: 1em;
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+    #input_count::-webkit-input-placeholder,#input_pass::-webkit-input-placeholder {
+        font-family: '造字工房力黑（非商用）';
+        color: rgba(0, 0, 0, 0.8);
+        font-size: 3ex;
+        text-indent: 9ex;
     }
     #input_count {
         width: 100%;
+    }
+    #input_pass {
+        width: 85%;
+    }
+    .iconenter {
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 15%;
         height: 100%;
-        border: 0;
-        margin: 0;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        font-size: 5ex;
     }
 </style>
