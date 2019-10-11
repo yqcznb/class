@@ -52,7 +52,7 @@ export default {
 .main{
     position: absolute;
     width: 86%;
-    height: 90%;
+    height: 80%;
     left: 7%;
     top: 5%;
     background: rgb(0, 0, 0);
@@ -69,7 +69,7 @@ export default {
         letter-spacing: 6.8px;
         line-height: 43px;
         text-decoration: none;
-        margin-top: 5%;
+        margin-top: 3%;
         .hr-inline{
             display: inline-block;
             height: 5px;
