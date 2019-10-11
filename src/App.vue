@@ -10,6 +10,7 @@ export default {
   name: 'App',
   data () {
     return {
+      // 背景图片自适应
       wind_width: window.innerWidth,
       wind_heigt: window.innerHeight,
       wind_size: window.innerWidth+window.innerHeight,
@@ -18,6 +19,7 @@ export default {
   }
   },
   mounted() {
+    // 背景图片自适应
     let backimg_dom = this.$refs.login_backimg;
     this.backimg_width = backimg_dom.offsetWidth;
     this.backimg_height= backimg_dom.offsetHeight;
@@ -42,6 +44,7 @@ export default {
 
   },
   watch: {
+    // 背景图片自适应
     'wind_size':function(val) {
       this.wind_size = val;
       let backimg_dom = this.$refs.login_backimg;
