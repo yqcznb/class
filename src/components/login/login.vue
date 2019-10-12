@@ -10,7 +10,7 @@
             </div>
         </transition>
         <transition
-         enter-active-class="animated slideInDown" leave-active-class="animated slideOutUp">
+         enter-active-class="animated fadeIn" leave-active-class="animated slideOutUp">
             <span v-show="!login_default">
                 <span class="record_info" v-text="record_info"></span>
                 <div class="login_box">
@@ -43,10 +43,10 @@
                     </div>
                     <div class="login_input_box">
                         <div class="login_input_count">
-                            <input readonly onfocus="this.removeAttribute('readonly');" type="text" name="" autocomplete="off" placeholder="用户账号" id="input_count">
+                            <input readonly onfocus="this.removeAttribute('readonly');" type="text" name="" autocomplete="off" placeholder="用户账号" id="input_count" v-model="input_count">
                         </div>
                         <div class="login_input_pass">
-                            <input readonly onfocus="this.removeAttribute('readonly');" type="password" name="" autocomplete="off" placeholder="用户密码" id="input_pass"> <button class="input_pass_right" @click="login_page_skip"><span class="iconfont iconenter"></span></button>
+                            <input readonly onfocus="this.removeAttribute('readonly');" type="password" name="" autocomplete="off" placeholder="用户密码" id="input_pass" v-model="input_pass"> <button class="input_pass_right" @click="login_page_skip"><span class="iconfont iconenter"></span></button>
                         </div>
                     </div>
                 </div>
@@ -55,6 +55,7 @@
     </div>
 </template>
 <script>
+import axios from 'axios'
 export default {
     name: 'login',
     data () {
@@ -71,7 +72,16 @@ export default {
             login_content_ur: '我是学生',
             login_content_down: '我是管理员',
             login_img_click: true,
+            input_count: '',
+            input_pass: '',
             skip_link: '/gzujian',
+        }
+    },
+    created() {
+        if(sessionStorage.getItem("loginState")) {
+            this.$router.push({
+                path: sessionStorage.getItem("indexPage")
+            })
         }
     },
     mounted() {
@@ -121,9 +131,34 @@ export default {
             this.login_img_click = !this.login_img_click;
         },
         login_page_skip() {
-            this.$router.push({
-                path: this.skip_link
-            })
+            if (this.input_count == '' || this.input_pass =='') {
+                    alert('请输入用户名或密码')
+                    }
+            else{
+                axios.get('http://no37.store:8080/AK/denglu1',{
+                    params: {
+                        yhzh:this.input_count,
+                        yhmm:this.input_pass,
+                    }
+                }).then(response=>{
+                    let returnState = response.data.jg;
+                    if(returnState == 1){
+                        alert("登录成功")
+                        this.$router.push({
+                            path: this.skip_link
+                        })
+                        sessionStorage.setItem("loginState",1);
+                        sessionStorage.setItem("indexPage",this.skip_link);
+                    }else if(returnState == 0){
+                        alert("账号或密码错误")
+                    }
+                })      //获取失败
+                .catch(error=>{
+                    // console.log(error);
+                    alert('网络错误，不能访问');
+                })
+            }
+            
         },
         login_timer() {
             let date = new Date();
