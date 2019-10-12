@@ -72,8 +72,8 @@ export default {
             login_content_ur: '我是学生',
             login_content_down: '我是管理员',
             login_img_click: true,
-            input_count: '',
-            input_pass: '',
+            input_count: '15611111111',
+            input_pass: '123',
             skip_link: '/gzujian',
         }
     },
