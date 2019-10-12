@@ -1,43 +1,57 @@
 <template>
     <div id="login">
-        <span class="record_info" v-text="record_info"></span>
-        <div class="login_box">
-            <div class="login_img_box">
-                <div id="img_box_up">
-                    <transition 
-                     enter-active-class="animated bounceInDown" leave-active-class="animated bounceOutUp">
-                        <div class="up_show" v-show="!login_img_click">
-                            <el-tooltip class="item" effect="dark" :content="login_content_ul" placement="left">
-                                <img :src="login_img_ul" class="img_choose" @click="change_login_profess(login_img_ul)">
-                            </el-tooltip>
-                            <el-tooltip class="item" effect="dark" :content="login_content_ur" placement="right">
-                                <img :src="login_img_ur" class="img_choose" @click="change_login_profess(login_img_ur)">
-                            </el-tooltip>
+        <transition
+         leave-active-class="animated rotateOutDownRight">
+            <div class="login_default" v-show="login_default">
+                <div class="login_timer">
+                    <span v-text="login_clock" class="login_clock"></span>
+                    <span v-text="login_calendar" class="login_calendar"></span>
+                </div>
+            </div>
+        </transition>
+        <transition
+         enter-active-class="animated slideInDown" leave-active-class="animated slideOutUp">
+            <span v-show="!login_default">
+                <span class="record_info" v-text="record_info"></span>
+                <div class="login_box">
+                    <div class="login_img_box">
+                        <div id="img_box_up">
+                            <transition 
+                            enter-active-class="animated bounceInDown" leave-active-class="animated bounceOutUp">
+                                <div class="up_show" v-show="!login_img_click">
+                                    <el-tooltip class="item" effect="dark" :content="login_content_ul" placement="left">
+                                        <img :src="login_img_ul" class="img_choose" @click="change_login_profess(login_img_ul)">
+                                    </el-tooltip>
+                                    <el-tooltip class="item" effect="dark" :content="login_content_ur" placement="right">
+                                        <img :src="login_img_ur" class="img_choose" @click="change_login_profess(login_img_ur)">
+                                    </el-tooltip>
+                                </div>
+                            </transition>
+                            <div class="up_hide" v-show="login_img_click">
+                                <img :src="login_img_ul" class="img_hide img_choose" >
+                                <img :src="login_img_ur" class="img_hide img_choose" >
+                            </div>
                         </div>
-                    </transition>
-                    <div class="up_hide" v-show="login_img_click">
-                        <img :src="login_img_ul" class="img_hide img_choose" >
-                        <img :src="login_img_ur" class="img_hide img_choose" >
+                        <div id="img_box_down">
+                            <transition 
+                            enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+                                <el-tooltip class="item" effect="dark" :content="login_content_down" placement="right" :value="!login_default">
+                                    <img :src="login_img_down" class="img_choose" @click="login_img_click = !login_img_click">
+                                </el-tooltip>
+                            </transition>
+                        </div>
+                    </div>
+                    <div class="login_input_box">
+                        <div class="login_input_count">
+                            <input readonly onfocus="this.removeAttribute('readonly');" type="text" name="" autocomplete="off" placeholder="用户账号" id="input_count">
+                        </div>
+                        <div class="login_input_pass">
+                            <input readonly onfocus="this.removeAttribute('readonly');" type="password" name="" autocomplete="off" placeholder="用户密码" id="input_pass"> <button class="input_pass_right" @click="login_page_skip"><span class="iconfont iconenter"></span></button>
+                        </div>
                     </div>
                 </div>
-                <div id="img_box_down">
-                    <transition 
-                     enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
-                        <el-tooltip class="item" effect="dark" :content="login_content_down" placement="right" hide-after=0 value=true>
-                            <img :src="login_img_down" class="img_choose" @click="login_img_click = !login_img_click">
-                        </el-tooltip>
-                    </transition>
-                </div>
-            </div>
-            <div class="login_input_box">
-                <div class="login_input_count">
-                    <input readonly onfocus="this.removeAttribute('readonly');" type="text" name="" autocomplete="off" placeholder="用户账号" id="input_count">
-                </div>
-                <div class="login_input_pass">
-                    <input readonly onfocus="this.removeAttribute('readonly');" type="password" name="" autocomplete="off" placeholder="用户密码" id="input_pass"> <button class="input_pass_right" @click="login_page_skip"><span class="iconfont iconenter"></span></button>
-                </div>
-            </div>
-        </div>
+            </span>
+        </transition>
     </div>
 </template>
 <script>
@@ -45,7 +59,10 @@ export default {
     name: 'login',
     data () {
         return {
+            login_default: true,
             record_info: '备案信息',
+            login_clock: '',
+            login_calendar: '',
             // 职业选择
             login_img_ul: 'https://upload-images.jianshu.io/upload_images/19325457-cb8e32f88e62ad95.png',
             login_img_ur: 'https://upload-images.jianshu.io/upload_images/19325457-ced61ba4e3cf881c.png',
@@ -53,14 +70,16 @@ export default {
             login_content_ul: '我是老师',
             login_content_ur: '我是学生',
             login_content_down: '我是管理员',
-
             login_img_click: true,
             skip_link: '/gzujian',
         }
     },
-    // mounted() {
-        
-    // },
+    mounted() {
+        setInterval(this.login_timer,1000);
+        setTimeout(() => {
+            this.login_default = !this.login_default;
+        },4000);
+    },
     // watch: {
 
     // },
@@ -105,6 +124,21 @@ export default {
             this.$router.push({
                 path: this.skip_link
             })
+        },
+        login_timer() {
+            let date = new Date();
+            let month = date.getMonth()+1;
+            let day = date.getDate();
+            let hour = date.getHours();
+            let minute = date.getMinutes();
+            if(hour.toString().length == 1 ) {
+                hour = "0" + hour;
+            }
+            if(minute.toString().length == 1 ) {
+                minute = "0" + minute;
+            }
+            this.login_clock = hour + ":" + minute;
+            this.login_calendar = month + "月" + day +"日";
         }
     }
 }
@@ -116,6 +150,27 @@ export default {
         height: 100%;
         margin: 0;
         overflow: hidden;
+    }
+    .login_default {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: transparent;
+    }
+    .login_timer {
+        position: absolute;
+        bottom: 2em;
+        right: 3em;
+        display: flex;
+        flex-direction: column;
+        color: white;
+    }
+    .login_clock {
+        font-size: 4em;
+    }
+    .login_calendar {
+        margin-top: 0.6ex;
+        font-size: 6ex;
     }
     img {
         cursor: pointer;
