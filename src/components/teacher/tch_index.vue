@@ -5,6 +5,34 @@
             <div class="main-title">
                 <span class="hr-inline"></span>当前课表<span class="hr-inline"></span>
             </div>
+            <div class="main-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>时间</td>
+                            <td>周一</td>
+                            <td>周二</td>
+                            <td>周三</td>
+                            <td>周四</td>
+                            <td>周五</td>
+                            <td>周六</td>
+                            <td>周日</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="item in 6">
+                            <td>06:30<br>~<br>07:20</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </template>
@@ -55,11 +83,10 @@ export default {
     height: 80%;
     left: 7%;
     top: 5%;
-    background: rgb(0, 0, 0);
-    opacity: 0.7;
+    background: rgba(0,0,0, 0.7);
     background-size: 100%;
     background-repeat: no-repeat;
-    box-shadow: 0 0 15px 15px rgb(0, 0, 0);
+    box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.7);
     .main-title{
         font-family: "Helvetica Neue";
         font-weight: bold;
@@ -79,6 +106,26 @@ export default {
             position: relative;
             top: -10px;
             margin: 0 10px;
+        }
+    }
+    .main-table{
+        display: flex;
+        color: rgb(81, 69, 69);
+        margin: 0 auto;
+        margin-top: 2%;
+        width: 90%;
+        table{
+            width: 100%;
+            tr,td{
+                border: 0;
+            }
+            thead td{
+                background-color: rgb(239, 193, 115);
+                height: 50px;
+            }
+            tbody td{
+                background-color: rgb(122, 196, 225);
+            }    
         }
     }
 }
