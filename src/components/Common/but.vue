@@ -84,7 +84,7 @@ export default {
   }
 }
 </script>
-<style>
+<style  lang="scss">
 .but{
   height: 60px;
   width: 100%;
@@ -96,10 +96,11 @@ export default {
   z-index: 100;
   color: #fff;
   line-height: 66px;
+  div{
+    display:inline-block;
+  }
 }
-.but div{
-  display:inline-block;
-}
+
 .xx{
   padding-left: 160px;
 }

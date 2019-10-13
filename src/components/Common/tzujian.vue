@@ -67,7 +67,8 @@ export default {
 </script>
 
 
-<style>
+<style lang="scss">
+ @import "../../assets/css/yy";
  .tzujian{
    z-index: 120;
   width: 62px;
@@ -75,30 +76,10 @@ export default {
   bottom:0;
   left:0;
   background-color: #222;
-  opacity:0.99
+  opacity:0.99;
+
  }
- .el-menu {
-    border-right: solid 1px #222;
-    }
- .el-submenu .el-menu-item {
-    height: 60px;
-    line-height: 60px;
-    padding: 0;
-    min-width: 50px;
-    padding-left: 0px;
- }
-  .el-menu-item {
-    height: 70px;
-    line-height: 70px;
-  }
- .el-menu-item.is-active{
-   
-    color:#fff;
-    padding-left: 0px;
- }
- .iconfont{
-   font-size: 25px;
- }
+
 
  
 </style>
