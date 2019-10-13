@@ -87,8 +87,8 @@ export default {
     border-right: solid 0px #222;
     }
  .el-submenu .el-menu-item {
-    height: 66px;
-    line-height: 66px;
+     height: 60px;
+    line-height: 60px;
     padding: 0;
     min-width: 50px;
     padding-left: 0px;

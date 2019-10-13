@@ -86,7 +86,7 @@ export default {
 </script>
 <style>
 .but{
-  height: 66px;
+  height: 60px;
   width: 100%;
   background-color: #222;
   opacity: 0.99;
