@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import login from '@/components/login/login'
 import stu_index from '@/components/stu_index/stu_index'
 import tch_index from '@/components/teacher/tch_index'
+import Administrator from '@/components/Administrator/Administrator'
 
 
 Vue.use(Router)
@@ -24,6 +25,11 @@ export default new Router({
       path: '/tch_index',
       name: 'tch_index',
       component: tch_index
+    },
+    {
+      path: '/Administrator',
+      name: 'Administrator',
+      component: Administrator
     }
     
   ]

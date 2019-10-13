@@ -74,7 +74,7 @@ export default {
             login_img_click: true,
             input_count: '15611111111',
             input_pass: '123',
-            skip_link: '/gzujian',
+            skip_link: '/Administrator',
         }
     },
     created() {
