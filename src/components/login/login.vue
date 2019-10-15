@@ -247,6 +247,9 @@ export default {
     img.img_hide {
         visibility: hidden;
     }
+    /* .el-tooltip__popper {
+        font-family: '造字工房力黑（非商用）';
+    } */
     .login_input_box {
         width: 75%;
         /* height: 10em; */

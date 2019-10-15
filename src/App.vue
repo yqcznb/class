@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img src="https://images.weserv.nl/?url=https://c-ssl.duitang.com/uploads/item/201910/10/2019101092532_kinVR.png" alt="" class="login_backimg" ref="login_backimg">
+    <img :src="backimg_src" alt="" class="login_backimg" ref="login_backimg">
     <router-view/>
   </div>
 </template>
@@ -11,26 +11,33 @@ export default {
   data () {
     return {
       // 背景图片自适应
+      backimg_src: 'https://images.weserv.nl/?url=https://c-ssl.duitang.com/uploads/item/201910/10/2019101092532_kinVR.png',
       wind_width: window.innerWidth,
       wind_heigt: window.innerHeight,
       wind_size: window.innerWidth+window.innerHeight,
       backimg_width: '',
       backimg_height: '',
-  }
+    }
+  },
+  created() {
+      let img = new Image();
+      let _this = this;
+      img.src = _this.backimg_src;
+      if(img.complete){
+        _this.backimg_width = img.width;
+        _this.backimg_height = img.height;
+      }
+      else{
+        img.onload = function(){
+          _this.backimg_width = img.width;
+          _this.backimg_height = img.height;
+          img.onload=null;//避免重复加载
+        }
+      }
   },
   mounted() {
     // 背景图片自适应
-    let backimg_dom = this.$refs.login_backimg;
-    this.backimg_width = backimg_dom.offsetWidth;
-    this.backimg_height= backimg_dom.offsetHeight;
-
-    if((this.backimg_width / this.backimg_height) < (this.wind_width / this.wind_heigt)) {
-      backimg_dom.style.width = '100%';
-    }
-    else {
-      backimg_dom.style.height = '100%';
-    }
-        
+    this.backimg_load();
     window.onresize = () => {
       return(() => {
         window.wind_size = window.innerWidth + window.innerHeight;
@@ -53,11 +60,24 @@ export default {
       if((this.backimg_width / this.backimg_height) > (this.wind_width / this.wind_heigt)) {
         backimg_dom.style.height = '100%';
       }
-      else {
+      else if((this.backimg_width / this.backimg_height) < (this.wind_width / this.wind_heigt)) {
         backimg_dom.style.width = '100%';
       }
     },
   },
+  methods: {
+    backimg_load() {
+      let backimg_dom = this.$refs.login_backimg;
+
+      if((this.backimg_width / this.backimg_height) < (this.wind_width / this.wind_heigt)) {
+        backimg_dom.style.width = '100%';
+      }
+      else {
+        backimg_dom.style.height = '100%';
+      }
+    },
+    
+  }
 }
 </script>
 
