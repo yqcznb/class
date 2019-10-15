@@ -1,11 +1,12 @@
 <template>
     <div class="container">
-        <tabbar></tabbar>
+        <tabbar :showtable="showtable" :setting="setting"></tabbar>
         <div class="main">
-            <div class="main-title">
+            <!-- 课表内容开始 -->
+            <div class="main-title" v-if="showtable">
                 <span class="hr-inline"></span>当前课表<span class="hr-inline"></span>
             </div>
-            <div class="main-table">
+            <div class="main-table" v-if="showtable">
                 <table>
                     <thead>
                         <tr>
@@ -33,6 +34,24 @@
                     </tbody>
                 </table>
             </div>
+            <!-- 课表内容结束 -->
+
+            <!-- 设置开始 -->
+            <div class="main-title" v-if="setting">
+                <span class="hr-inline"></span>设置<span class="hr-inline"></span>
+            </div>
+            <div class="main-setting" v-if="setting">
+                <div class="main-setting-item">
+                    <i class="iconfont iconxiugaimima"></i>
+                    <span class="main-setting-item-title">修改密码</span>
+                </div>
+                <div class="main-setting-item">
+                    <i class="iconfont icontuichudenglu"></i>
+                    <span class="main-setting-item-title">退出登录</span>
+                </div>
+            </div>
+            <!-- 设置结束 -->
+            <button @click="change">切换显示</button>
         </div>
     </div>
 </template>
@@ -45,7 +64,8 @@ export default {
     },
     data() {
         return {
-
+            showtable:false,
+            setting:true,
         };
     },
     computed: {
@@ -61,7 +81,10 @@ export default {
 
     },
     methods: {
-
+        change(){
+            this.showtable = !this.showtable
+            this.setting = !this.setting
+        }
     },
     components: {
         tabbar,
@@ -126,6 +149,24 @@ export default {
             tbody td{
                 background-color: rgb(122, 196, 225);
             }    
+        }
+    }
+    .main-setting{
+        display: flex;
+            justify-content: center;
+        margin-top: 5%;
+        .iconfont{
+            font-size: 160px;
+            color: #fff;
+        }
+        .main-setting-item{
+            display: inline-flex;
+            flex-direction: column;
+            width: 30%;
+            .main-setting-item-title{
+                font-size: 30px;
+                color: #fff;
+            }
         }
     }
 }
