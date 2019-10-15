@@ -15,7 +15,7 @@
             </el-tooltip>
           </el-menu-item>
           <el-menu-item index="2" style='padding-left:18px!important;'>
-             <el-tooltip class="item" effect="dark" content="信息" placement="right">
+             <el-tooltip class="item" effect="dark" content="xx同学201702505xxx" placement="right">
                 <i class="iconfont iconxinxi1"></i>
             </el-tooltip>
           </el-menu-item>
