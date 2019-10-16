@@ -31,12 +31,6 @@ export default {
         img.onload = function(){
           _this.backimg_width = img.width;
           _this.backimg_height = img.height;
-          if((_this.backimg_width / _this.backimg_height) > (_this.wind_width / _this.wind_heigt)) {
-            backimg_dom.style.height = '100%';
-          }
-          else {
-            backimg_dom.style.width = '100%';
-          }
           img.onload=null;//避免重复加载
         }
       }
@@ -54,7 +48,16 @@ export default {
         this.wind_heigt = window.wind_heigt;
       })()
     };
-
+    setTimeout(()=>{
+      if((this.backimg_width / this.backimg_height) > (this.wind_width / this.wind_heigt)) {
+        this.$refs.login_backimg.style.height = '100%';
+      }
+      else if((this.backimg_width / this.backimg_height) < (this.wind_width / this.wind_heigt)) {
+        this.$refs.login_backimg.style.width = '100%';
+      }
+    },500);
+    
+    
   },
   watch: {
     // 背景图片自适应
