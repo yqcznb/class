@@ -31,6 +31,12 @@ export default {
         img.onload = function(){
           _this.backimg_width = img.width;
           _this.backimg_height = img.height;
+          if((_this.backimg_width / _this.backimg_height) > (_this.wind_width / _this.wind_heigt)) {
+            backimg_dom.style.height = '100%';
+          }
+          else {
+            backimg_dom.style.width = '100%';
+          }
           img.onload=null;//避免重复加载
         }
       }
