@@ -13,23 +13,27 @@ export default new Router({
     {
       path: '/',
       name: 'login',
-      component: login
+      component: login,
+      meta: { isLogin: false },
     },
     {
 
       path: '/stu_index',
       name: 'stu_index',
-      component: stu_index
+      component: stu_index,
+      meta: { isLogin: true },
     },
     {
       path: '/tch_index',
       name: 'tch_index',
-      component: tch_index
+      component: tch_index,
+      meta: { isLogin: true },
     },
     {
       path: '/Administrator',
       name: 'Administrator',
-      component: Administrator
+      component: Administrator,
+      meta: { isLogin: true },
     }
     
   ]

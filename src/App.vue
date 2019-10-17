@@ -106,7 +106,7 @@ body{
   text-align: center;
 }
 .login_backimg {
-  position: absolute;
+  position: fixed;;
   left: 0;
   right: 0;
   margin: 0 auto;
