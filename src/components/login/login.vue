@@ -78,9 +78,9 @@ export default {
         }
     },
     created() {
-        if(sessionStorage.getItem("loginState")) {
+        if(localStorage.getItem("loginState")) {
             this.$router.push({
-                path: sessionStorage.getItem("indexPage")
+                path: localStorage.getItem("indexPage")
             })
         }
     },
@@ -132,8 +132,8 @@ export default {
         },
         login_page_skip() {
             if (this.input_count == '' || this.input_pass =='') {
-                    alert('请输入用户名或密码')
-                    }
+                alert('请输入用户名或密码');
+            }
             else{
                 axios.get('http://no37.store:8080/AK/denglu1',{
                     params: {
@@ -147,8 +147,13 @@ export default {
                         this.$router.push({
                             path: this.skip_link
                         })
-                        sessionStorage.setItem("loginState",1);
-                        sessionStorage.setItem("indexPage",this.skip_link);
+                        //设置Vuex登录标志为true，默认userLogin为false
+                        this.$store.dispatch("userLogin", true);
+                        //Vuex在用户刷新的时候userLogin会回到默认值false，所以我们需要用到HTML5储存
+                        //我们设置一个名为Flag，值为isLogin的字段，作用是如果Flag有值且为isLogin的时候，证明用户已经登录了。
+                        localStorage.setItem("Flag", "isLogin");
+                        localStorage.setItem("loginState",1);
+                        localStorage.setItem("indexPage",this.skip_link);
                     }else if(returnState == 0){
                         alert("账号或密码错误")
                     }

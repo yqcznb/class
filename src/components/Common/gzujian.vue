@@ -91,7 +91,7 @@ export default {
     position: fixed;
     bottom: 0;
     left: 0;
-    background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.7) 15%, rgba(0,0,0,0.8) 25%, #000);
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.6) 15%, rgba(0,0,0,0.9) 25%, #000);
     opacity: 0.99;
     
     
