@@ -102,23 +102,23 @@ export default {
 }
 .main{
     position: absolute;
-    width: 86%;
+    // width: 80%;
     height: 80%;
-    left: 7%;
-    top: 5%;
+    left: 0;
+    right: 0;
+    margin-top: 3em;
+    margin-right: 9ex;
+    margin-left: 6em;
     background: rgba(0,0,0, 0.7);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 5ex 5ex rgba(0, 0, 0, 0.71);
     .main-title{
-        // font-weight: bold;
         font-size: 36px;
         color: rgb(255, 255, 255);
         font-style: inherit;
         letter-spacing: 6.8px;
         line-height: 43px;
         text-decoration: none;
-        margin-top: 3%;
+        // margin-top: 3%;
         .hr-inline{
             display: inline-block;
             height: 5px;
@@ -132,13 +132,13 @@ export default {
     }
     .main-table{
         display: flex;
-        font-family: 'fzchsjt';
         color: rgb(81, 69, 69);
         margin: 0 auto;
         margin-top: 2%;
         width: 90%;
         .table-time{
             background-color: #cccccc;
+            font-family: 'zzgflh';
             color: white;
         }
         table{
@@ -156,9 +156,10 @@ export default {
                 flex-grow: 1;
             }
             thead td{
-                background-color: rgb(239, 193, 115);               
+                background-color: rgb(239, 193, 115);   
             }
             tbody td{
+                font-family: 'fzchsjt';
                 background-color: rgb(122, 196, 225);
             }    
         }
@@ -166,7 +167,7 @@ export default {
     .main-setting{
         display: flex;
             justify-content: center;
-        margin-top: 5%;
+        margin-top: 8%;
         .iconfont{
             font-size: 160px;
             color: #fff;
