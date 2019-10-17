@@ -3,20 +3,27 @@
 }
 .el-submenu {
     .el-menu-item {
-        height: 60px;
-        line-height: 60px;
+        height: 65px;
+        line-height: 65px;
         padding: 0;
-        min-width: 50px;
+        min-width: 65px;
         padding-left: 0px;
     }
 }
 .el-menu-item {
-    height: 70px;
-    line-height: 70px;
+    height: 65px;
+    line-height: 65px;
     &.is-active {
         color: #fff;
         padding-left: 0px;
     }
+}
+.el-submenu__title {
+    height: 65px;
+    line-height: 65px;
+}
+.el-menu-item-group__title {
+    padding: 0;
 }
 .iconfont {
     font-size: 25px;

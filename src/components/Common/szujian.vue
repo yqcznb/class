@@ -77,7 +77,7 @@ export default {
  @import "../../assets/css/yy";
  .szujian{
   z-index: 130;
-  width: 66px;
+  width: 65px;
   position:fixed;
   bottom:0;
   left:0;

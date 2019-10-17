@@ -10,11 +10,12 @@
           text-color="#fff"
          >
           <el-menu-item index="1" style='padding-left:18px!important;margin-top:3em;' @click.native = "gchangePage('/Administrator/adminSignout')">
+
             <el-tooltip class="item" effect="dark" content="设置" placement="right" >
              <i class="iconfont iconshezhi"></i>
             </el-tooltip>
           </el-menu-item>
-          <el-menu-item index="2" style='padding-left:18px!important;'>
+          <el-menu-item index="2" style='padding-left:20px!important;'>
              <el-tooltip class="item" effect="dark" content="信息" placement="right">
                 <i class="iconfont iconxinxi1"></i>
             </el-tooltip>
@@ -48,7 +49,7 @@
               </el-menu-item>
             </el-menu-item-group>
           </el-submenu>
-          <el-menu-item index="4" style='padding-left:18px!important;'>
+          <el-menu-item index="4" style='padding-left:20px!important;'>
             <el-tooltip class="item" effect="dark" content="主页" placement="right">
                <i class="iconfont iconzhuye1"></i>
             </el-tooltip>
@@ -92,7 +93,7 @@ export default {
  @import "../../assets/css/yy";
  .gzujian {
     z-index: 130;
-    width: 66px;
+    width: 65px;
     position: fixed;
     bottom: 0;
     left: 0;
