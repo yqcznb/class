@@ -111,7 +111,7 @@ export default {
     background-repeat: no-repeat;
     box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.7);
     .main-title{
-        font-weight: bold;
+        // font-weight: bold;
         font-size: 36px;
         color: rgb(255, 255, 255);
         font-style: inherit;
