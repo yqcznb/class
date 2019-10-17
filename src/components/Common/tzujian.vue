@@ -9,7 +9,7 @@
           background-color="transparent"
           text-color="#fff"
          >
-          <el-menu-item index="1" style='padding-left:18px!important;margin-top:3em;'>
+          <el-menu-item index="1" style='padding:!important;margin-top:3em; text-align:center'>
             <el-tooltip class="item" effect="dark" content="设置" placement="right" >
              <i class="iconfont iconshezhi"></i>
             </el-tooltip>
@@ -71,7 +71,7 @@ export default {
  @import "../../assets/css/yy";
  .tzujian{
    z-index: 120;
-  width: 62px;
+  width: 65px;
   position:fixed;
   bottom:0;
   left:0;

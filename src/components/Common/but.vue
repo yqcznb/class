@@ -100,7 +100,6 @@ export default {
     display:inline-block;
   }
 }
-
 .xx{
   padding-left: 160px;
 }
