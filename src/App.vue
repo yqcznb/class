@@ -101,8 +101,13 @@ body{
   src: url('./assets/fonts/zzgflh.otf');
   font-display: swap;
 }
+@font-face {
+  font-family: 'fzchsjt';
+  src: url('./assets/fonts/fzchsjt.ttf');
+  font-display: swap;
+}
 #app {
-  font-family: 'zzgflh', '微软雅黑';
+  font-family: 'zzgflh', 'fzchsjt', '微软雅黑';
   text-align: center;
 }
 .login_backimg {

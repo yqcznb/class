@@ -132,6 +132,7 @@ export default {
     }
     .main-table{
         display: flex;
+        font-family: 'fzchsjt';
         color: rgb(81, 69, 69);
         margin: 0 auto;
         margin-top: 2%;
