@@ -3,28 +3,35 @@
   <div class="but">
       <div class="xx">备案信息</div> 
     <div class="data">
-       {{realTime}}
+       <ul>
+         <li v-for="aa in list" :key="aa.i">{{aa.id}}</li>
+       </ul>
     </div>
   </div>
   </div>
 </template>
 <script>
 export default {
-  name: 'tzujain',
+  name: 'but',
   data () {
     return {
-      realTime:"",
+      realTime:[],
+      list:[
+        {id:0,i:0},
+        {id:1,i:1}
+      ]
     }
   },
   mounted () {
   // 页面加载完后显示当前时间
-  this.realTime = this.dealWithTime(new Date())
+  this.dealWithTime(new Date())
   // 定时刷新时间
   let _this = this
   // 定时器
-  this.timer = setInterval(function () {
-    _this.realTime = _this.dealWithTime(new Date()) // 修改数据date
+  this.timer = setInterval( () =>{
+    this.dealWithTime(new Date()) // 修改数据date
   }, 1000)
+   console.log( this.list)
 },
   computed:{
 
@@ -78,15 +85,18 @@ export default {
         default:
           break
       }
-      formatDateTime =   + H + ':' + Min +' '+ M + '月' + D + '日 ' + ' 星期' + W
-      return formatDateTime
+     var daa= {id:H + ':' + Min,i:1}
+      this.list.splice(0,1,daa)
+      var da= {id:M + '月' + D + '日 ' + ' 星期' + W,i:2}
+      this.list.splice(1,1,da)
+       console.log( this.list)
   }
   }
 }
 </script>
 <style  lang="scss">
 .but{
-  height: 60px;
+  height: 65px;
   width: 100%;
   background-color: #222;
   opacity: 0.99;
@@ -107,5 +117,25 @@ export default {
   float:right;
   line-height: 66px;
   padding-right: 20px;
+  font-size: 10px;
+  ul{
+    padding: 0;
+    margin: 0;
+    li:first-child{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      line-height: 30px;
+      font-size: 18px;
+      margin-top: 5px;
+    }
+    li:last-child{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 13px;
+      line-height: 25px;
+    }
+  }
 }
 </style>

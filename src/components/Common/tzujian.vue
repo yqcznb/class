@@ -9,22 +9,22 @@
           background-color="transparent"
           text-color="#fff"
          >
-          <el-menu-item index="1" style='padding:!important;margin-top:3em; text-align:center'>
+          <el-menu-item index="1" style='padding-left:20px!important;margin-top:3em; text-align:center'>
             <el-tooltip class="item" effect="dark" content="设置" placement="right" >
              <i class="iconfont iconshezhi"></i>
             </el-tooltip>
           </el-menu-item>
-          <el-menu-item index="2" style='padding-left:18px!important;'>
+          <el-menu-item index="2" style='padding-left:20px!important;'>
              <el-tooltip class="item" effect="dark" content="信息" placement="right">
                 <i class="iconfont iconxinxi1"></i>
             </el-tooltip>
           </el-menu-item>
-            <el-menu-item index="3" style='padding-left:18px!important;'>
+            <el-menu-item index="3" style='padding-left:20px!important;'>
               <el-tooltip class="item" effect="dark" content="课程表" placement="right">
                 <i class="iconfont iconkechengbiao"></i>
             </el-tooltip>
           </el-menu-item>
-          <el-menu-item index="4" style='padding-left:18px!important;'>
+          <el-menu-item index="4" style='padding-left:20px!important;'>
             <el-tooltip class="item" effect="dark" content="主页" placement="right">
                <i class="iconfont iconzhuye1"></i>
             </el-tooltip>
@@ -70,7 +70,7 @@ export default {
 <style lang="scss">
  @import "../../assets/css/yy";
  .tzujian{
-   z-index: 120;
+  z-index: 120;
   width: 65px;
   position:fixed;
   bottom:0;

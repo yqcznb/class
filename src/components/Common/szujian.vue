@@ -9,12 +9,12 @@
           background-color="transparent"
           text-color="#fff"
          >
-          <el-menu-item index="1" style='padding-left:18px!important;margin-top:3em;'>
+          <el-menu-item index="1" style='padding-left:20px!important;margin-top:3em;'>
             <el-tooltip class="item" effect="dark" content="设置" placement="right" >
              <i class="iconfont iconshezhi"></i>
             </el-tooltip>
           </el-menu-item>
-          <el-menu-item index="2" style='padding-left:18px!important;'>
+          <el-menu-item index="2" style='padding-left:20px!important;'>
              <el-tooltip class="item" effect="dark" content="xx同学201702505xxx" placement="right">
                 <i class="iconfont iconxinxi1"></i>
             </el-tooltip>
@@ -38,7 +38,7 @@
               </el-menu-item>
             </el-menu-item-group>
           </el-submenu>
-          <el-menu-item index="4" style='padding-left:18px!important;'>
+          <el-menu-item index="4" style='padding-left:20px!important;'>
             <el-tooltip class="item" effect="dark" content="主页" placement="right">
                <i class="iconfont iconzhuye1"></i>
             </el-tooltip>
