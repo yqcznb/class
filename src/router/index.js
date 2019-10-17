@@ -4,7 +4,7 @@ import login from '@/components/login/login'
 import stu_index from '@/components/stu_index/stu_index'
 import tch_index from '@/components/teacher/tch_index'
 import Administrator from '@/components/Administrator/Administrator'
-
+import adminSignout from '@/components/Administrator/admin_signout'
 
 Vue.use(Router)
 
@@ -17,7 +17,6 @@ export default new Router({
       meta: { isLogin: false },
     },
     {
-
       path: '/stu_index',
       name: 'stu_index',
       component: stu_index,
@@ -34,6 +33,14 @@ export default new Router({
       name: 'Administrator',
       component: Administrator,
       meta: { isLogin: true },
+      children: [
+        {
+          path: 'adminSignout',
+          name: 'adminSignout',
+          component: adminSignout,
+          meta: { isLogin: true },
+        },
+      ],
     }
     
   ]
