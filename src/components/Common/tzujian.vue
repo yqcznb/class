@@ -6,10 +6,10 @@
           class="el-menu-vertical-demo"
           @open="handleOpen"
           @close="handleClose"
-          background-color="#222"
+          background-color="transparent"
           text-color="#fff"
          >
-          <el-menu-item index="1" style='padding-left:18px!important;'>
+          <el-menu-item index="1" style='padding-left:18px!important;margin-top:3em;'>
             <el-tooltip class="item" effect="dark" content="设置" placement="right" >
              <i class="iconfont iconshezhi"></i>
             </el-tooltip>
@@ -75,7 +75,7 @@ export default {
   position:fixed;
   bottom:0;
   left:0;
-  background-color: #222;
+  background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.7) 15%, rgba(0,0,0,0.8) 25%, #000);
   opacity:0.99;
 
  }
