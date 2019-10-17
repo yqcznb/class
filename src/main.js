@@ -39,7 +39,7 @@ router.beforeEach((to, from, next) => {
     //如果已登录，还想想进入登录注册界面，则定向回首页
     if (!to.meta.isLogin) {
       next({
-        path: '/'
+        path: localStorage.getItem("indexPage")
       })
     }
   
@@ -49,7 +49,7 @@ router.beforeEach((to, from, next) => {
     //用户想进入需要登录的页面，则定向回登录界面
     if(to.meta.isLogin){
       next({
-        path: '/login',
+        path: localStorage.getItem("indexPage")
       })
     //用户进入无需登录的界面，则跳转继续
     }else{

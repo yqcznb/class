@@ -9,7 +9,7 @@
           background-color="transparent"
           text-color="#fff"
          >
-          <el-menu-item index="1" style='padding-left:18px!important;margin-top:3em;'>
+          <el-menu-item index="1" style='padding-left:18px!important;margin-top:3em;' @click.native = "gchangePage('/Administrator/adminSignout')">
             <el-tooltip class="item" effect="dark" content="设置" placement="right" >
              <i class="iconfont iconshezhi"></i>
             </el-tooltip>
@@ -73,11 +73,16 @@ export default {
   },
   methods:{
     handleOpen(key, keyPath) {
-        console.log(key, keyPath);
-      },
-      handleClose(key, keyPath) {
-        console.log(key, keyPath);
-      }
+      console.log(key, keyPath);
+    },
+    handleClose(key, keyPath) {
+      console.log(key, keyPath);
+    },
+    gchangePage(url) {
+      this.$router.push({
+        path: url
+      })
+    }
   }
 }
 </script>
@@ -91,7 +96,7 @@ export default {
     position: fixed;
     bottom: 0;
     left: 0;
-    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.49) 15%, rgba(0,0,0,0.8) 25%, #000);
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.49) 15%, rgba(0,0,0,0.8) 25%, #222);
     opacity: 0.99;
     
     

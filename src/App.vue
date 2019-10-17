@@ -55,7 +55,7 @@ export default {
       else {
         this.$refs.login_backimg.style.width = '100%';
       }
-    },500);
+    },1000);
     
     
   },
@@ -110,6 +110,6 @@ body{
   left: 0;
   right: 0;
   margin: 0 auto;
-  z-index: -1;
+  z-index: -10;
 }
 </style>
