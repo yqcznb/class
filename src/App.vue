@@ -49,10 +49,10 @@ export default {
       })()
     };
     setTimeout(()=>{
-      if((this.backimg_width / this.backimg_height) > (this.wind_width / this.wind_heigt)) {
-        this.$refs.login_backimg.style.height = '100%';
+      if((this.backimg_width / this.backimg_height) < (this.wind_width / this.wind_heigt)) {
+        this.$refs.login_backimg.style.width = '100%';
       }
-      else if((this.backimg_width / this.backimg_height) < (this.wind_width / this.wind_heigt)) {
+      else {
         this.$refs.login_backimg.style.width = '100%';
       }
     },500);
@@ -96,8 +96,13 @@ body{
   padding: 0;
   margin: 0;
 }
+@font-face {
+  font-family: 'zzgflh';
+  src: url('./assets/fonts/zzgflh.otf');
+  font-display: swap;
+}
 #app {
-  font-family: '造字工房力黑（非商用）';
+  font-family: 'zzgflh', '微软雅黑';
   text-align: center;
 }
 .login_backimg {
