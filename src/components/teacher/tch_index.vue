@@ -21,15 +21,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="item in 6">
-                            <td>06:30<br>~<br>07:20</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
+                        <tr v-for="item in 6" :key="item">
+                            <td class="table-time">06:30<br>~07:20</td>
+                            <td>JavaScript课程设计</td>
+                            <td>JavaScript课程设计</td>
+                            <td>JavaScript课程设计</td>
+                            <td>JavaScript课程设计</td>
+                            <td>JavaScript课程设计</td>
+                            <td>JavaScript课程设计</td>
+                            <td>JavaScript课程设计</td>
                         </tr>
                     </tbody>
                 </table>
@@ -111,7 +111,6 @@ export default {
     background-repeat: no-repeat;
     box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.7);
     .main-title{
-        font-family: "Helvetica Neue";
         font-weight: bold;
         font-size: 36px;
         color: rgb(255, 255, 255);
@@ -137,14 +136,26 @@ export default {
         margin: 0 auto;
         margin-top: 2%;
         width: 90%;
+        .table-time{
+            background-color: #cccccc;
+            color: white;
+        }
         table{
+            display: flex;
+            flex-direction: column;
             width: 100%;
             tr,td{
-                border: 0;
+                display: inline-flex;
+                justify-content: center;
+                width: 100%;
+            }
+            td{
+                line-height: 2em;
+                margin: 5px 5px;
+                flex-grow: 1;
             }
             thead td{
-                background-color: rgb(239, 193, 115);
-                height: 50px;
+                background-color: rgb(239, 193, 115);               
             }
             tbody td{
                 background-color: rgb(122, 196, 225);
