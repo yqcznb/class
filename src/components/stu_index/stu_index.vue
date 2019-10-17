@@ -3,8 +3,16 @@
         <stubar></stubar>
         <div class="main">
             <div class="main-title">
-                <span class="hr-inline"></span>当前课表<span class="hr-inline"></span>
+                <span class="hr-inline"></span>课表显示<span class="hr-inline"></span>
             </div>
+
+            <div class="table_bar">
+                <button class="bar_one">格式一</button>
+                <button class="bar_two">格式二</button>
+                <button class="bar_three">格式三</button>
+            </div>
+            
+           
             <div class="main-table">
                 <table>
                     <thead>
@@ -33,6 +41,11 @@
                     </tbody>
                 </table>
             </div>
+            <div class="download">
+                <i class="iconfont iconxiazai"></i>
+            </div>
+           
+
         </div>
     </div>
 </template>
@@ -92,7 +105,7 @@ export default {
         letter-spacing: 6.8px;
         line-height: 43px;
         text-decoration: none;
-        margin-top: 2%;
+       
     }
         .hr-inline{
             display: inline-block;
@@ -104,13 +117,27 @@ export default {
             top: -10px;
             margin: 0 10px;
         }
-    
+    .table_bar{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+    }
+        .table_bar button{
+             display: inline-block;
+            height: 30px;
+            width: 50px;
+            border-radius: 5px;
+            border: 1px #ccc solid;
+            margin-top: 1%;
+        }
+      
     .main-table{
         display: flex;
         color: rgb(81, 69, 69);
         margin: 0 auto;
-        margin-top: 2%;
-        width: 60%;
+        margin-top: 1%;
+        width: 80%;
     }
         table{
             width: 100%;
@@ -124,5 +151,11 @@ export default {
             }
             tbody td{
                 background-color: rgb(122, 196, 225);
-            } 
+            }
+        .download{
+            position: absolute;
+            top: 433px;
+            left: 1040px;
+            color: rgba(17, 170, 137, 0.733);
+        }
 </style>
