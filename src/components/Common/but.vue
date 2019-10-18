@@ -89,7 +89,6 @@ export default {
       this.list.splice(0,1,daa)
       var da= {id:M + '月' + D + '日 ' + ' 星期' + W,i:2}
       this.list.splice(1,1,da)
-       console.log( this.list)
   }
   }
 }

@@ -143,7 +143,10 @@ export default {
                 }).then(response=>{
                     let returnState = response.data.jg;
                     if(returnState == 1){
-                        alert("登录成功")
+                        this.$message({
+                            type: 'success',
+                            message: '登录成功!'
+                        });
                         this.$router.push({
                             path: this.skip_link
                         })

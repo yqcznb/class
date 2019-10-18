@@ -4,10 +4,10 @@
             <hr> <span class="settings_title">设置</span> <hr>
         </div>
         <div class="settings_choose">
-            <div class="settings_update_pass">
+            <div class="settings_update_pass" @click = "set_up_pass_confirm">
                 <span class="iconfont iconxiugaimima"></span> <span class="set_up_pass_title">修改密码</span>
             </div>
-            <div class="settings_signout">
+            <div class="settings_signout" @click="set_sign_confirm">
                 <span class="iconfont icontuichudenglu"></span> <span class="set_sign_title">退出登录</span>
             </div>
         </div>
@@ -15,7 +15,46 @@
 </template>
 <script>
 export default {
-    
+    name: 'App',
+    data () {
+        return {
+        
+        }
+    },
+    // created() {
+        
+    // },
+    // mounted() {
+        
+    // },
+    // watch: {
+        
+    // },
+    methods: {
+        // 设置
+        set_up_pass_confirm() {
+            
+        },
+        set_sign_confirm() {
+            this.$confirm('即将退出登录，是否确认退出?', '提示', {
+                confirmButtonText: '确定',
+                cancelButtonText: '取消',
+                type: 'warning'
+            }).then(() => {
+                localStorage.removeItem("Flag");
+                localStorage.removeItem("loginState");
+                localStorage.removeItem("indexPage");
+                this.$store.dispatch("userLogin", false);
+                this.$message({
+                    type: 'success',
+                    message: '退出登录成功!'
+                });
+                this.$router.push('/');
+                
+            })
+        },
+        
+    }
 }
 </script>
 <style lang="scss" scoped>
@@ -42,6 +81,7 @@ export default {
         }
         .settings_update_pass,.settings_signout {
             display: flex;
+            cursor: pointer;
             flex-direction: column;
             align-items: center;
             color: white;
@@ -54,10 +94,10 @@ export default {
         }
     }
     .line_bar {
-        width: 40%;
+        width: 55%;
     }
     .settings_choose {
-        width: 55%;
+        width: 47%;
     }
    
 }
