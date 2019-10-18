@@ -71,6 +71,7 @@ export default {
             login_content_ul: '我是老师',
             login_content_ur: '我是学生',
             login_content_down: '我是管理员',
+            stateFlag: 'adminLogin',
             login_img_click: true,
             input_count: '15611111111',
             input_pass: '123',
@@ -113,6 +114,8 @@ export default {
                 this.login_content_ul = login_content_ur;
                 this.login_content_ur = login_content_down;
 
+                this.stateFlag = 'tchLogin';
+
                 this.skip_link = '/tch_index';
             }
             else if(url == login_img_ur) {
@@ -124,6 +127,8 @@ export default {
                 this.login_content_down = login_content_ur;
                 this.login_content_ur = login_content_ul;
                 this.login_content_ul = login_content_down;
+
+                this.stateFlag = 'tchLogin';
 
                 this.skip_link = '/stu_index';
             }
@@ -148,10 +153,10 @@ export default {
                             message: '登录成功!'
                         });
                         //设置Vuex登录标志为true，默认userLogin为false
-                        this.$store.dispatch("userLogin", true);
+                        this.$store.dispatch(this.stateFlag, true);
                         //Vuex在用户刷新的时候userLogin会回到默认值false，所以我们需要用到HTML5储存
                         //我们设置一个名为Flag，值为isLogin的字段，作用是如果Flag有值且为isLogin的时候，证明用户已经登录了。
-                        localStorage.setItem("Flag", "isLogin");
+                        localStorage.setItem("Flag", this.stateFlag);
                         localStorage.setItem("loginState",1);
                         localStorage.setItem("indexPage",this.skip_link);
                         this.$router.push({
