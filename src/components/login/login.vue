@@ -147,9 +147,6 @@ export default {
                             type: 'success',
                             message: '登录成功!'
                         });
-                        this.$router.push({
-                            path: this.skip_link
-                        })
                         //设置Vuex登录标志为true，默认userLogin为false
                         this.$store.dispatch("userLogin", true);
                         //Vuex在用户刷新的时候userLogin会回到默认值false，所以我们需要用到HTML5储存
@@ -157,6 +154,9 @@ export default {
                         localStorage.setItem("Flag", "isLogin");
                         localStorage.setItem("loginState",1);
                         localStorage.setItem("indexPage",this.skip_link);
+                        this.$router.push({
+                            path: this.skip_link
+                        })
                     }else if(returnState == 0){
                         alert("账号或密码错误")
                     }
