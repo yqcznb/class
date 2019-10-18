@@ -9,12 +9,12 @@
           background-color="transparent"
           text-color="#fff"
          >
-          <el-menu-item index="1" style='padding-left:20px!important;margin-top:3em;'>
+          <el-menu-item index="1" style='padding-left:20px!important;margin-top:3em;' @click="showSetting">
             <el-tooltip class="item" effect="dark" content="设置" placement="right" >
              <i class="iconfont iconshezhi"></i>
             </el-tooltip>
           </el-menu-item>
-          <el-menu-item index="2" style='padding-left:20px!important;'>
+          <el-menu-item index="2" style='padding-left:20px!important;' @click="hidden">
              <el-tooltip class="item" effect="dark" content="xx同学201702505xxx" placement="right">
                 <i class="iconfont iconxinxi1"></i>
             </el-tooltip>
@@ -26,12 +26,12 @@
             </el-tooltip>
             </template>
             <el-menu-item-group>
-               <el-menu-item index="1-1" style='padding-left:0px!important;'>
+               <el-menu-item index="1-1" style='padding-left:0px!important;' @click="show">
                   <el-tooltip class="item" effect="dark" content="显示" placement="right">
                   <i class="iconfont iconxianshi"></i>
                   </el-tooltip>
               </el-menu-item>
-               <el-menu-item index="1-2" style='padding-left:0px!important;'>
+               <el-menu-item index="1-2" style='padding-left:0px!important;' @click="hidden">
                   <el-tooltip class="item" effect="dark" content="选择" placement="right">
                   <i class="iconfont iconxuanze"></i>
                   </el-tooltip>
@@ -55,7 +55,7 @@ export default {
   name: 'szujian',
   data () {
     return {
-     
+      str: 1,
     }
   },
   components:{
@@ -67,6 +67,18 @@ export default {
       },
       handleClose(key, keyPath) {
         console.log(key, keyPath);
+      },
+      show: function(){
+        if(this.str%2==0)
+          this.$emit('transferShow',false);
+        this.$emit('transferShow',true);
+        this.str += 1;
+      },
+      hidden: function(){
+        this.$emit('transferShow',false);
+      },
+      showSetting: function(){
+        this.$emit('transferSetting',false);
       }
   }
 }
