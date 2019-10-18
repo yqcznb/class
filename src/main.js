@@ -72,9 +72,8 @@ router.beforeEach((to, from, next) => {
   }
   
   else{
-
     //用户想进入需要登录的页面，则定向回登录界面
-    if(to.meta.getFlag){
+    if(to.meta.stuLogin || to.meta.tchLogin || to.meta.adminLogin){
       next({
         path: '/'
       })
