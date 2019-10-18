@@ -50,7 +50,7 @@ router.beforeEach((to, from, next) => {
     //用户想进入需要登录的页面，则定向回登录界面
     if(to.meta.isLogin){
       next({
-        path: localStorage.getItem("indexPage")
+        path: '/'
       })
     //用户进入无需登录的界面，则跳转继续
     }else{
