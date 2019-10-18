@@ -16,37 +16,36 @@ export default new Router({
       path: '/',
       name: 'login',
       component: login,
-      meta: { isLogin: false },
     },
     {
       path: '/stu_index',
       name: 'stu_index',
       component: stu_index,
-      meta: { isLogin: true },
+      meta: { stuLogin: true },
     },
     {
       path: '/tch_index',
       name: 'tch_index',
       component: tch_index,
-      meta: { isLogin: true },
+      meta: { tchLogin: true },
     },
     {
       path: '/Administrator',
       name: 'Administrator',
       component: Administrator,
-      meta: { isLogin: true },
+      meta: { adminLogin: true },
       children: [
         {
           path: 'adminSettings',
           name: 'adminSettings',
           component: adminSettings,
-          meta: { isLogin: true },
+          meta: { adminLogin: true },
         },
         {
           path: 'Display_one',
           name: 'Display_one',
           component: Display_one,
-          meta: { isLogin: true },
+          meta: { adminLogin: true },
         },
       ],
     }

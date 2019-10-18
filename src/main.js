@@ -31,14 +31,14 @@ router.beforeEach((to, from, next) => {
   let getFlag = localStorage.getItem("Flag");
 
   //如果登录标志存在且为isLogin，即用户已登录
-  if(getFlag === "isLogin"){
+  if( getFlag === "adminLogin" || getFlag === "stuLogin" || getFlag === "tchLogin" ){
 
     //设置vuex登录状态为已登录
-    store.state.isLogin = true
+    store.state.getFlag = true
     next()
 
     //如果已登录，还想想进入登录注册界面，则定向回首页
-    if (!to.meta.isLogin) {
+    if (!to.meta.getFlag) {
       next({
         path: localStorage.getItem("indexPage")
       })
@@ -48,7 +48,7 @@ router.beforeEach((to, from, next) => {
   }else{
 
     //用户想进入需要登录的页面，则定向回登录界面
-    if(to.meta.isLogin){
+    if(to.meta.getFlag){
       next({
         path: '/'
       })
