@@ -5,6 +5,8 @@ import stu_index from '@/components/stu_index/stu_index'
 import tch_index from '@/components/teacher/tch_index'
 import Administrator from '@/components/Administrator/Administrator'
 import adminSettings from '@/components/Administrator/adminSettings'
+import Show_one from '@/components/Administrator/Display_one'
+
 
 Vue.use(Router)
 
@@ -38,6 +40,10 @@ export default new Router({
           path: 'adminSettings',
           name: 'adminSettings',
           component: adminSettings,
+          meta: { isLogin: true },
+        },
+        { path: 'Display_one',
+          component: Display_one,
           meta: { isLogin: true },
         },
       ],
