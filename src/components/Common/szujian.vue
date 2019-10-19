@@ -22,7 +22,7 @@
            <el-submenu index="3">
             <template slot="title">
               <el-tooltip class="item" effect="dark" content="课程表" placement="right">
-                <i class="iconfont iconkechengbiao"></i>
+                <div @click="xuanze"><i class="iconfont iconkechengbiao"></i></div>
             </el-tooltip>
             </template>
             <el-menu-item-group>
@@ -38,7 +38,7 @@
               </el-menu-item>
             </el-menu-item-group>
           </el-submenu>
-          <el-menu-item index="4" style='padding-left:20px!important;'>
+          <el-menu-item index="4" style='padding-left:20px!important;' @click="xuanze">
             <el-tooltip class="item" effect="dark" content="主页" placement="right">
                <i class="iconfont iconzhuye1"></i>
             </el-tooltip>

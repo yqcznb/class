@@ -11,7 +11,7 @@ export default {
   data () {
     return {
       // 背景图片自适应
-      backimg_src: 'https://images.weserv.nl/?url=https://c-ssl.duitang.com/uploads/item/201910/10/2019101092532_kinVR.png',
+      backimg_src: 'https://c-ssl.duitang.com/uploads/item/201910/10/2019101092532_kinVR.png',
       wind_width: window.innerWidth,
       wind_heigt: window.innerHeight,
       wind_size: window.innerWidth+window.innerHeight,
