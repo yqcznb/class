@@ -14,7 +14,7 @@
              <i class="iconfont iconshezhi"></i>
             </el-tooltip>
           </el-menu-item>
-          <el-menu-item index="2" style='padding-left:20px!important;' @click="hidden">
+          <el-menu-item index="2" style='padding-left:20px!important;' @click="xuanze">
              <el-tooltip class="item" effect="dark" content="xx同学201702505xxx" placement="right">
                 <i class="iconfont iconxinxi1"></i>
             </el-tooltip>
@@ -31,7 +31,7 @@
                   <i class="iconfont iconxianshi"></i>
                   </el-tooltip>
               </el-menu-item>
-               <el-menu-item index="1-2" style='padding-left:0px!important;' @click="hidden">
+               <el-menu-item index="1-2" style='padding-left:0px!important;' @click="xuanze">
                   <el-tooltip class="item" effect="dark" content="选择" placement="right">
                   <i class="iconfont iconxuanze"></i>
                   </el-tooltip>
@@ -79,6 +79,9 @@ export default {
       },
       showSetting: function(){
         this.$emit('transferSetting',false);
+      },
+      xuanze: function(){
+        this.$emit('transferXuan',true);
       }
   }
 }
