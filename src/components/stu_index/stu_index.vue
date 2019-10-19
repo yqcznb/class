@@ -10,9 +10,15 @@
 
             <!-- 格式栏 -->
             <div class="table_bar" v-if="show_Bar">
-                <button class="bar_one">格式一</button>
-                <button class="bar_two">格式二</button>
-                <button class="bar_three">格式三</button>
+                <el-tooltip class="item" effect="dark" content="按时间排列" placement="right">
+                    <button class="bar_one">格式一</button>
+                </el-tooltip>
+                <el-tooltip class="item" effect="dark" content="按教师排列" placement="right">
+                    <button class="bar_two">格式二</button>
+                </el-tooltip>
+                <el-tooltip class="item" effect="dark" content="按教室排列" placement="right">
+                    <button class="bar_three">格式三</button>
+                </el-tooltip>
             </div>
             
            <!-- 课表 -->
@@ -47,7 +53,9 @@
 
             <!-- 下载 -->
             <div class="download" v-if="show_Download">
-                <i class="iconfont iconxiazai"></i>
+                <el-tooltip class="item" effect="dark" content="点击下载课表" placement="right-start">
+                    <i class="iconfont iconxiazai"></i>
+                </el-tooltip>
             </div>
 
 
@@ -59,7 +67,7 @@
                     <i class="iconfont iconxiugaimima"></i>
                     <span class="setting_name">修改密码</span>
                 </div>
-                <div class="setting_part">
+                <div class="setting_part" @click="output">
                     <i class="iconfont icontuichudenglu"></i>
                     <span class="setting_name">退出登录</span>
                 </div>
@@ -114,7 +122,28 @@ export default {
             // 保证课表显示
             this.classTable = msg;
             // 隐藏格式栏 下载按钮
-            this.show_Bar = this.show_Download = this.setting = false;
+            this.show_Bar = this.show_Download = false;
+            // 保证设置界面隐藏
+            this.setting = false;
+        },
+        // 退出登录
+        output: function(){
+            this.$confirm('即将退出登录，是否确认退出?', '提示', {
+                confirmButtonText: '确定',
+                cancelButtonText: '取消',
+                type: 'warning'
+            }).then(() => {
+                localStorage.removeItem("Flag");
+                localStorage.removeItem("loginState");
+                localStorage.removeItem("indexPage");
+                this.$store.dispatch("adminLogin", false);
+                this.$message({
+                    type: 'success',
+                    message: '退出登录成功!'
+                });
+                this.$router.push('/');
+                
+            })
         }
     },
     components: {
@@ -146,7 +175,7 @@ export default {
 }
     /* 标题 */
     .interface_title{
-        font-weight: bold;
+        // font-weight: bold;
         font-size: 36px;
         color: rgb(255, 255, 255);
         font-style: inherit;
