@@ -1,12 +1,12 @@
 <template>
     <div class="container">
-        <tabbar :showtable="showtable" :setting="setting"></tabbar>
+        <tabbar @show-setting="ShowSetting" @show-currenttable="ShowCurrenttable" @show-showtable="ShowShowtable"></tabbar>
         <div class="main">
-            <!-- 课表内容开始 -->
-            <div class="main-title" v-if="showtable">
+            <!-- 当前课表内容开始 -->
+            <div class="main-title" v-if="show_currenttable">
                 <span class="hr-inline"></span>当前课表<span class="hr-inline"></span>
             </div>
-            <div class="main-table" v-if="showtable">
+            <div class="main-table" v-if="show_currenttable">
                 <table>
                     <thead>
                         <tr>
@@ -34,13 +34,13 @@
                     </tbody>
                 </table>
             </div>
-            <!-- 课表内容结束 -->
+            <!-- 当前课表内容结束 -->
 
             <!-- 设置开始 -->
-            <div class="main-title" v-if="setting">
+            <div class="main-title" v-if="show_setting">
                 <span class="hr-inline"></span>设置<span class="hr-inline"></span>
             </div>
-            <div class="main-setting" v-if="setting">
+            <div class="main-setting" v-if="show_setting">
                 <div class="main-setting-item">
                     <i class="iconfont iconxiugaimima"></i>
                     <span class="main-setting-item-title">修改密码</span>
@@ -51,7 +51,52 @@
                 </div>
             </div>
             <!-- 设置结束 -->
-            <button @click="change">切换显示</button>
+
+            <!-- 显示课表开始 -->
+            <div class="main-title" v-if="show_showtable">
+                <span class="hr-inline"></span>课表显示<span class="hr-inline"></span>
+            </div>
+            <!-- 格式栏 -->
+            <div class="table_bar" v-if="show_showtable">
+                <el-tooltip class="item" effect="dark" content="按时间排列" placement="right">
+                    <button class="bar_one">格式一</button>
+                </el-tooltip>
+                <el-tooltip class="item" effect="dark" content="按教师排列" placement="right">
+                    <button class="bar_two">格式二</button>
+                </el-tooltip>
+                <el-tooltip class="item" effect="dark" content="按教室排列" placement="right">
+                    <button class="bar_three">格式三</button>
+                </el-tooltip>
+            </div>
+            <div class="main-table" v-if="show_showtable">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>时间</td>
+                            <td>周一</td>
+                            <td>周二</td>
+                            <td>周三</td>
+                            <td>周四</td>
+                            <td>周五</td>
+                            <td>周六</td>
+                            <td>周日</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="item in 6" :key="item">
+                            <td class="table-time">06:30<br>~07:20</td>
+                            <td>JavaScript课程设计</td>
+                            <td>JavaScript课程设计</td>
+                            <td>JavaScript课程设计</td>
+                            <td>JavaScript课程设计</td>
+                            <td>JavaScript课程设计</td>
+                            <td>JavaScript课程设计</td>
+                            <td>JavaScript课程设计</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- 显示课表结束 -->
         </div>
     </div>
 </template>
@@ -64,8 +109,9 @@ export default {
     },
     data() {
         return {
-            showtable:false,
-            setting:true,
+            show_currenttable: true, // 当前课表
+            show_setting: false,    // 设置
+            show_showtable: false,   // 显示课表
         };
     },
     computed: {
@@ -81,10 +127,21 @@ export default {
 
     },
     methods: {
-        change(){
-            this.showtable = !this.showtable
-            this.setting = !this.setting
-        }
+        // 显示设置按钮
+        ShowSetting: function(){
+            this.show_currenttable = this.show_showtable = false;
+            this.show_setting = true;
+        },
+        // 显示当前课表
+        ShowCurrenttable: function(){
+            this.show_setting = this.show_showtable = false;
+            this.show_currenttable = true;
+        },
+        // 显示多种格式课表
+        ShowShowtable: function(){
+            this.show_setting = this.show_currenttable = false;
+            this.show_showtable = true;
+        },
     },
     components: {
         tabbar,
@@ -130,6 +187,21 @@ export default {
             margin: 0 10px;
         }
     }
+    /* 格式栏 */
+    .table_bar{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+    }
+        .table_bar button{
+            display: inline-block;
+            height: 30px;
+            width: 50px;
+            border-radius: 5px;
+            border: 1px rgb(204, 204, 204) solid;
+            margin-top: 1%;
+        }
     .main-table{
         display: flex;
         color: rgb(81, 69, 69);
