@@ -44,7 +44,6 @@ export default {
                 localStorage.removeItem("Flag");
                 localStorage.removeItem("loginState");
                 localStorage.removeItem("indexPage");
-                this.$store.dispatch("adminLogin", false);
                 this.$message({
                     type: 'success',
                     message: '退出登录成功!'
