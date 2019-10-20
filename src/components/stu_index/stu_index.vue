@@ -153,7 +153,7 @@ export default {
 };
 </script>
 
-<style scoped lang='scss'>
+<style scoped>
 *{margin: 0;padding: 0;list-style: none;}
 .container{
     position: absolute;
@@ -175,7 +175,6 @@ export default {
 }
     /* 标题 */
     .interface_title{
-        // font-weight: bold;
         font-size: 36px;
         color: rgb(255, 255, 255);
         font-style: inherit;
@@ -245,7 +244,7 @@ export default {
             left: 1025px;
             color: rgba(17, 170, 137, 0.733);
         }
-        // 设置界面
+        /* 设置界面 */
          .interface_setting{
             display: flex;
             justify-content: center;
