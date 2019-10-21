@@ -60,13 +60,12 @@ export default {
   height: 26px;
   border-radius: 30px;
   line-height: 26px;
-  font-size: 24px;
+  font-size: 21px;
   cursor: pointer;
   margin: auto;
   color:#fff;
   text-align: center;
   border:2px solid #fff;
-  font-weight: 600;
 }
 #step .item-body .items .inside.active{
   color:#7ac4e1;
@@ -77,11 +76,13 @@ export default {
   width: 180px;
   color: #fff;
   font-size: 30px;
-  font-weight: 600;
   cursor: default;
 }
 /* 修改上传css */
 .el-upload--picture-card:hover, .el-upload:focus{
   color:#fff
+}
+.el-popover{
+  min-width: 0;
 }
 </style>
