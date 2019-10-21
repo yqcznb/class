@@ -5,6 +5,7 @@ import stu_index from '@/components/stu_index/stu_index'
 import tch_index from '@/components/teacher/tch_index'
 import Administrator from '@/components/Administrator/Administrator'
 import adminSettings from '@/components/Administrator/adminSettings'
+import change_pass from '@/components/Administrator/change_pass'
 import Display_one from '@/components/Administrator/Display_one'
 
 // guize相关
@@ -46,6 +47,12 @@ export default new Router({
           meta: { adminLogin: true },
         },
         {
+          path: 'change_pass',
+          name: 'change_pass',
+          component: change_pass,
+          meta: { adminLogin: true },
+        },
+        {
           path: 'Display_one',
           name: 'Display_one',
           component: Display_one,
@@ -71,7 +78,6 @@ export default new Router({
         },
       ],
     },
-
 
   ]
 })
