@@ -39,11 +39,13 @@
                   </el-tooltip>
               </el-menu-item>
               </router-link>
+              <router-link to="guize1" tag="div">
                <el-menu-item index="1-3" style='padding-left:0px!important;'>
                   <el-tooltip class="item" effect="dark" content="模板上传下载" placement="right">
                   <i class="iconfont iconmobanshangchuanxiazai"></i>
                   </el-tooltip>
               </el-menu-item>
+              </router-link>
                <el-menu-item index="1-4" style='padding-left:0px!important;'>
                   <el-tooltip class="item" effect="dark" content="添加" placement="right">
                   <i class="iconfont icontianjia"></i>
