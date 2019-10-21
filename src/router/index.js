@@ -7,6 +7,10 @@ import Administrator from '@/components/Administrator/Administrator'
 import adminSettings from '@/components/Administrator/adminSettings'
 import Display_one from '@/components/Administrator/Display_one'
 
+// guize相关
+import Guize1 from '@/components/updata/guize1'
+import Guize2 from '@/components/updata/guize2'
+import Guize3 from '@/components/updata/guize3'
 
 Vue.use(Router)
 
@@ -48,6 +52,28 @@ export default new Router({
           meta: { adminLogin: true },
         },
       ],
+    },
+    {
+      path: '/Administrator',
+      name: 'Administrator',
+      component: Administrator,
+      children:[
+        {
+          path: '/guize1',
+          name: 'guize1',
+          component: Guize1
+        },
+        {
+          path: '/guize2',
+          name: 'guize2',
+          component: Guize2
+        },
+        {
+          path: '/guize3',
+          name: 'guize3',
+          component: Guize3
+        },
+      ]
     }
     
   ]
