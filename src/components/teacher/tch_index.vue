@@ -45,7 +45,7 @@
                     <i class="iconfont iconxiugaimima"></i>
                     <span class="main-setting-item-title">修改密码</span>
                 </div>
-                <div class="main-setting-item">
+                <div class="main-setting-item" @click="tch_signout">
                     <i class="iconfont icontuichudenglu"></i>
                     <span class="main-setting-item-title">退出登录</span>
                 </div>
@@ -142,6 +142,23 @@ export default {
             this.show_setting = this.show_currenttable = false;
             this.show_showtable = true;
         },
+        tch_signout() {
+            this.$confirm('即将退出登录，是否确认退出?', '提示', {
+                confirmButtonText: '确定',
+                cancelButtonText: '取消',
+                type: 'warning'
+            }).then(() => {
+                localStorage.removeItem("Flag");
+                localStorage.removeItem("loginState");
+                localStorage.removeItem("indexPage");
+                this.$message({
+                    type: 'success',
+                    message: '退出登录成功!'
+                });
+                this.$router.push('/');
+                
+            })
+        }
     },
     components: {
         tabbar,
