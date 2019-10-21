@@ -5,6 +5,7 @@ import stu_index from '@/components/stu_index/stu_index'
 import tch_index from '@/components/teacher/tch_index'
 import Administrator from '@/components/Administrator/Administrator'
 import adminSettings from '@/components/Administrator/adminSettings'
+import change_pass from '@/components/Administrator/change_pass'
 import Display_one from '@/components/Administrator/Display_one'
 
 
@@ -39,6 +40,12 @@ export default new Router({
           path: 'adminSettings',
           name: 'adminSettings',
           component: adminSettings,
+          meta: { adminLogin: true },
+        },
+        {
+          path: 'change_pass',
+          name: 'change_pass',
+          component: change_pass,
           meta: { adminLogin: true },
         },
         {
