@@ -2,9 +2,6 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 Vue.use(Vuex);
 
-
-
-
 const store = new Vuex.Store({
   // 设置属性
   state: {

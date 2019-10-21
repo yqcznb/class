@@ -58,30 +58,26 @@ export default new Router({
           component: Display_one,
           meta: { adminLogin: true },
         },
-      ],
-    },
-    {
-      path: '/Administrator',
-      name: 'Administrator',
-      component: Administrator,
-      children:[
         {
           path: '/guize1',
           name: 'guize1',
-          component: Guize1
+          component: Guize1,
+          meta: { adminLogin: true },
         },
         {
           path: '/guize2',
           name: 'guize2',
-          component: Guize2
+          component: Guize2,
+          meta: { adminLogin: true },
         },
         {
           path: '/guize3',
           name: 'guize3',
-          component: Guize3
+          component: Guize3,
+          meta: { adminLogin: true },
         },
-      ]
-    }
+      ],
+    },
     
   ]
 })
