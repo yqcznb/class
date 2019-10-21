@@ -39,7 +39,7 @@
                   </el-tooltip>
               </el-menu-item>
               </router-link>
-              <router-link to="guize1" tag="div">
+              <router-link to="/Administrator/guize1" tag="div">
                <el-menu-item index="1-3" style='padding-left:0px!important;'>
                   <el-tooltip class="item" effect="dark" content="模板上传下载" placement="right">
                   <i class="iconfont iconmobanshangchuanxiazai"></i>
@@ -70,7 +70,7 @@ export default {
   name: 'gzujian',
   data () {
     return {
-     
+
     }
   },
   components:{
@@ -103,11 +103,11 @@ export default {
     left: 0;
     background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.49) 15%, rgba(0,0,0,0.8) 25%, #222);
     opacity: 0.99;
-    
-    
+
+
 }
 
 
 
- 
+
 </style>

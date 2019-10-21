@@ -7,7 +7,7 @@
       </div>
 
       <div class="next" title="下一步">
-        <router-link to="/guize2" tag="span"><i class="el-icon-right"></i></router-link>
+        <router-link to="/Administrator/guize2" tag="span"><i class="el-icon-right"></i></router-link>
       </div>
     </div>
 
@@ -22,7 +22,7 @@ export default {
         return{
           // 步骤条参数 index:圈内文字 ， to：路由跳转地址  msg 底部显示文字 active 激活的index
           stepData:{
-            list:[{index:1,to:'/guize1'},{index:2,to:'/guize2'},{index:3,to:'/guize3'}],
+            list:[{index:1,to:'/Administrator/guize1'},{index:2,to:'/Administrator/guize2'},{index:3,to:'/Administrator/guize3'}],
             msg:'模  板  下  载',
             active:1
           }
