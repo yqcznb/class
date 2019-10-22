@@ -279,10 +279,6 @@ export default {
   .main .left .left-main .list .list-item .names .joinClass{
     position: absolute;
     transform:rotate(-45deg);
-    -ms-transform:rotate(-45deg); /* Internet Explorer */
-    -moz-transform:rotate(-45deg); /* Firefox */
-    -webkit-transform:rotate(-45deg); /* Safari 和 Chrome */
-    -o-transform:rotate(-45deg); /* Opera */
     background: #000;
     color: #fff;
     font-size: 12px;
