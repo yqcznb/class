@@ -11,23 +11,24 @@
     height: 65px;
     line-height: 65px;
  }
+ @mixin six($one,$one1,$two,$two2,$three,$three1){
+    #{$one}:$one1;
+    #{$two}:$two2;
+    #{$three}:$three1;
+ }
  .el-menu {
     border-right: solid 0px #222;
 }
 .el-submenu {
     .el-menu-item {
         @extend %hl;
-        padding: 0;
-        min-width: 65px;
-        padding-left: 0px;
+        @include six("padding",0 ," min-width" , 65px," padding-left" , 0px);
     }
 }
 .el-menu-item {
     @extend %hl;
     &.is-active {
-        color: #fff;
-        padding-left: 0px;
-        background: #222;
+        @include six("color",#fff ,"padding-left", 0px,"background",#222);
     }
 }
 .el-submenu__title {
