@@ -6,6 +6,7 @@ import tch_index from '@/components/teacher/tch_index'
 import Administrator from '@/components/Administrator/Administrator'
 import adminSettings from '@/components/Administrator/adminSettings'
 import Display_one from '@/components/Administrator/Display_one'
+import adminadd from '@/components/Administrator/adminadd'
 
 
 Vue.use(Router)
@@ -45,6 +46,12 @@ export default new Router({
           path: 'Display_one',
           name: 'Display_one',
           component: Display_one,
+          meta: { adminLogin: true },
+        },
+        {
+          path: 'adminadd',
+          name: 'adminadd',
+          component: adminadd,
           meta: { adminLogin: true },
         },
       ],
