@@ -7,7 +7,7 @@
       </div>
 
       <div class="next" title="下一步">
-        <router-link to="/Administrator/guize2" tag="span"><i class="el-icon-right"></i></router-link>
+        <router-link to="/Administrator/guize2" tag="span"><i><img src="https://upload-images.jianshu.io/upload_images/19325457-b0eba5387a8299b9.png" width="70" height="70"></i></router-link>
       </div>
     </div>
 
@@ -53,7 +53,15 @@ export default {
     padding:50px 0;
     position: relative;
   }
-  .next{
+    .next{
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+  /* .next{
     color: #fff;
     font-size: 50px;
     position: absolute;
@@ -65,5 +73,6 @@ export default {
     border-radius: 50px;
     line-height: 48px;
     cursor: pointer;
-  }
+  } */
+
 </style>
