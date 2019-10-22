@@ -8,27 +8,35 @@
           @close="handleClose"
           background-color="transparent"
           text-color="#fff"
-         >
+        >
+        <router-link to="/teacher/tch_setting" tag="div">
           <el-menu-item index="1" style='padding-left:20px!important;margin-top:3em; text-align:center'>
             <el-tooltip class="item" effect="dark" content="设置" placement="right" >
-             <i class="iconfont iconshezhi"></i>
+              <i class="iconfont iconshezhi"></i>
             </el-tooltip>
           </el-menu-item>
+        </router-link>
+        <router-link to="/teacher/tch_information" tag="div">
           <el-menu-item index="2" style='padding-left:20px!important;'>
-             <el-tooltip class="item" effect="dark" content="信息" placement="right">
+              <el-tooltip class="item" effect="dark" content="信息" placement="right">
                 <i class="iconfont iconxinxi1"></i>
             </el-tooltip>
           </el-menu-item>
+        </router-link>
+        <router-link to="/teacher/tch_table" tag="div">
             <el-menu-item index="3" style='padding-left:20px!important;'>
               <el-tooltip class="item" effect="dark" content="课程表" placement="right">
                 <i class="iconfont iconkechengbiao"></i>
             </el-tooltip>
           </el-menu-item>
+        </router-link>
+        <router-link to="/teacher" tag="div">
           <el-menu-item index="4" style='padding-left:20px!important;'>
             <el-tooltip class="item" effect="dark" content="主页" placement="right">
-               <i class="iconfont iconzhuye1"></i>
+                <i class="iconfont iconzhuye1"></i>
             </el-tooltip>
           </el-menu-item>
+        </router-link>
         </el-menu>
   </div>
     <but></but>
@@ -70,14 +78,7 @@ export default {
 <style lang="scss">
  @import "../../assets/css/yy";
  .tzujian{
-  z-index: 120;
-  width: 65px;
-  position:fixed;
-  bottom:0;
-  left:0;
-  background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.49) 15%, rgba(0,0,0,0.8) 25%, #222);
-  opacity:0.99;
-
+   @extend %gg;
  }
 
 
