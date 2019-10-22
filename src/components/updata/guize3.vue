@@ -10,8 +10,6 @@
             </el-input>
             <div class="choice">
 
-
-
               <el-select v-model="choiceKey" size="small" placeholder="请选择" @change='choiceChange'>
                <el-option  v-for="item in options" :key="item.id"
                 :label="item.value" :value="item.id">
