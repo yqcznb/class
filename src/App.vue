@@ -19,22 +19,9 @@ export default {
       backimg_height: '',
     }
   },
-  created() {
-      let img = new Image();
-      let _this = this;
-      img.src = _this.backimg_src;
-      if(img.complete){
-        _this.backimg_width = img.width;
-        _this.backimg_height = img.height;
-      }
-      else{
-        img.onload = function(){
-          _this.backimg_width = img.width;
-          _this.backimg_height = img.height;
-          img.onload=null;//避免重复加载
-        }
-      }
-  },
+  // created() {
+      
+  // },
   mounted() {
     // 背景图片自适应
     this.backimg_load();
@@ -53,11 +40,9 @@ export default {
         this.$refs.login_backimg.style.width = '100%';
       }
       else {
-        this.$refs.login_backimg.style.width = '100%';
+        this.$refs.login_backimg.style.height = '100%';
       }
     },1000);
-    
-    
   },
   watch: {
     // 背景图片自适应
@@ -76,13 +61,19 @@ export default {
   },
   methods: {
     backimg_load() {
-      let backimg_dom = this.$refs.login_backimg;
-
-      if((this.backimg_width / this.backimg_height) < (this.wind_width / this.wind_heigt)) {
-        backimg_dom.style.width = '100%';
+      let img = new Image();
+      let _this = this;
+      img.src = _this.backimg_src;
+      if(img.complete){
+        _this.backimg_width = img.width;
+        _this.backimg_height = img.height;
       }
-      else {
-        backimg_dom.style.height = '100%';
+      else{
+        img.onload = function(){
+          _this.backimg_width = img.width;
+          _this.backimg_height = img.height;
+          img.onload=null;//避免重复加载
+        }
       }
     },
     
