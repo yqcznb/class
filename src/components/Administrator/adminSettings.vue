@@ -33,7 +33,7 @@ export default {
     methods: {
         // 设置
         set_up_pass_confirm() {
-            
+            this.$router.push('/Administrator/change_pass');
         },
         set_sign_confirm() {
             this.$confirm('即将退出登录，是否确认退出?', '提示', {
@@ -88,7 +88,7 @@ export default {
                 font-size: 11em;
             }
             .set_up_pass_title,.set_sign_title {
-                font-size: 3ex;
+                font-size: 4ex;
             }
         }
     }

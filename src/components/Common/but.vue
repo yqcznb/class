@@ -94,6 +94,15 @@ export default {
 }
 </script>
 <style  lang="scss">
+%yy{
+   padding: 0;
+    margin: 0;
+}
+@mixin aa($size,$line-height){
+    list-style: none;
+    line-height: $line-height;
+    font-size: $size;
+}
 .but{
   height: 65px;
   width: 100%;
@@ -110,7 +119,7 @@ export default {
   }
 }
 .xx{
-  padding-left: 160px;
+  padding-left: 100px;
 }
 .data{
   float:right;
@@ -118,22 +127,15 @@ export default {
   padding-right: 20px;
   font-size: 10px;
   ul{
-    padding: 0;
-    margin: 0;
+   @extend %yy;
     li:first-child{
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      line-height: 30px;
-      font-size: 18px;
       margin-top: 5px;
+      @extend %yy;
+      @include aa(18px,30px);
     }
     li:last-child{
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      font-size: 13px;
-      line-height: 25px;
+       @extend %yy;
+       @include aa(13px,25px);
     }
   }
 }

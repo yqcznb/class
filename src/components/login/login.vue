@@ -89,7 +89,7 @@ export default {
         setInterval(this.login_timer,1000);
         setTimeout(() => {
             this.login_default = !this.login_default;
-        },4000);
+        },3300);
     },
     // watch: {
 
@@ -116,7 +116,7 @@ export default {
 
                 this.stateFlag = 'tchLogin';
 
-                this.skip_link = '/tch_index';
+                this.skip_link = '/teacher';
             }
             else if(url == login_img_ur) {
                 // 图片切换
@@ -202,7 +202,7 @@ export default {
     .login_default {
         width: 100%;
         height: 100%;
-        position: absolute;
+        position: fixed;
         background: transparent;
     }
     .login_timer {
