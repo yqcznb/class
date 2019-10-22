@@ -169,7 +169,7 @@ export default {
           this.btnText = '禁止排课';
         }
       },
-      // 跳转下一步
+      // 跳转下一个
       nextMove(){
 
       }
