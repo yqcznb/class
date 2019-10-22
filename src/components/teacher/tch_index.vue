@@ -75,21 +75,6 @@ export default {
             margin: 0 10px;
         }
     }
-    /* 格式栏 */
-    .table_bar{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        width: 100%;
-    }
-        .table_bar button{
-            display: inline-block;
-            height: 30px;
-            width: 50px;
-            border-radius: 5px;
-            border: 1px rgb(204, 204, 204) solid;
-            margin-top: 1%;
-        }
     .main-table{
         display: flex;
         color: rgb(81, 69, 69);
@@ -126,7 +111,7 @@ export default {
     }
     .main-setting{
         display: flex;
-            justify-content: center;
+        justify-content: center;
         margin-top: 8%;
         .iconfont{
             font-size: 160px;
