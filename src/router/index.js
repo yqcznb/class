@@ -2,7 +2,10 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import login from '@/components/login/login'
 import stu_index from '@/components/stu_index/stu_index'
-import tch_index from '@/components/teacher/tch_index'
+import teacher from '@/components/teacher/tch_index'
+import tch_setting from '@/components/teacher/tch_setting'
+import tch_information from '@/components/teacher/tch_information'
+import tch_table from '@/components/teacher/tch_table'
 import Administrator from '@/components/Administrator/Administrator'
 import adminSettings from '@/components/Administrator/adminSettings'
 import change_pass from '@/components/Administrator/change_pass'
@@ -29,10 +32,36 @@ export default new Router({
       meta: { stuLogin: true },
     },
     {
-      path: '/tch_index',
-      name: 'tch_index',
-      component: tch_index,
+      path: '/teacher',
+      name: 'teacher',
+      component: teacher,
       meta: { tchLogin: true },
+      children: [
+        {
+          path: 'tch_setting',
+            name: 'tch_setting',
+            component: tch_setting,
+            meta: { 
+              tchLogin: true
+            },
+        },
+        {
+          path: 'tch_information',
+          name: 'tch_information',
+          component: tch_information,
+          meta: {
+            tchLogin: true
+          },
+        },
+        {
+          path: 'tch_table',
+          name: 'tch_table',
+          component: tch_table,
+          meta: {
+            tchLogin: true
+          },
+        },
+      ]
     },
     {
       path: '/Administrator',

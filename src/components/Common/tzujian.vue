@@ -8,27 +8,35 @@
           @close="handleClose"
           background-color="transparent"
           text-color="#fff"
-         >
-          <el-menu-item index="1" style='padding-left:20px!important;margin-top:3em; text-align:center' @click="showSetting">
+        >
+        <router-link to="/teacher/tch_setting" tag="div">
+          <el-menu-item index="1" style='padding-left:20px!important;margin-top:3em; text-align:center'>
             <el-tooltip class="item" effect="dark" content="设置" placement="right" >
-             <i class="iconfont iconshezhi"></i>
+              <i class="iconfont iconshezhi"></i>
             </el-tooltip>
           </el-menu-item>
-          <el-menu-item index="2" style='padding-left:20px!important;' @click="showCurrenttable">
-             <el-tooltip class="item" effect="dark" content="信息" placement="right">
+        </router-link>
+        <router-link to="/teacher/tch_information" tag="div">
+          <el-menu-item index="2" style='padding-left:20px!important;'>
+              <el-tooltip class="item" effect="dark" content="信息" placement="right">
                 <i class="iconfont iconxinxi1"></i>
             </el-tooltip>
           </el-menu-item>
-            <el-menu-item index="3" style='padding-left:20px!important;' @click="showShowtable">
+        </router-link>
+        <router-link to="/teacher/tch_table" tag="div">
+            <el-menu-item index="3" style='padding-left:20px!important;'>
               <el-tooltip class="item" effect="dark" content="课程表" placement="right">
                 <i class="iconfont iconkechengbiao"></i>
             </el-tooltip>
           </el-menu-item>
-          <el-menu-item index="4" style='padding-left:20px!important;' @click="showCurrenttable">
+        </router-link>
+        <router-link to="/teacher" tag="div">
+          <el-menu-item index="4" style='padding-left:20px!important;'>
             <el-tooltip class="item" effect="dark" content="主页" placement="right">
-               <i class="iconfont iconzhuye1"></i>
+                <i class="iconfont iconzhuye1"></i>
             </el-tooltip>
           </el-menu-item>
+        </router-link>
         </el-menu>
   </div>
     <but></but>
@@ -61,18 +69,6 @@ export default {
       },
       handleClose(key, keyPath) {
         console.log(key, keyPath);
-      },
-      showSetting: function(){
-        this.$emit('show-setting');
-        console.log('aaa')
-      },
-      showCurrenttable: function(){
-        this.$emit('show-currenttable');
-        console.log('bbb')
-      },
-      showShowtable: function(){
-        this.$emit('show-showtable');
-        console.log('ccc')
       },
   }
 }
