@@ -375,8 +375,11 @@ export default {
   .main .right .right-item .click .iconfont.iconmsnui-forbid{
     color:#d81e06;
   }
-  .main .right .right-item .click .iconfont.iconyunxu{
+  .main .right .right-item .click .iconfont.{
     color:#000;
+  }
+  .iconyunxu{
+    color:#17ab79
   }
   .upload{
     width: 100%;
