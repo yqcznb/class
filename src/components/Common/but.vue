@@ -103,6 +103,9 @@ export default {
     line-height: $line-height;
     font-size: $size;
 }
+@mixin cha($aa,$bb){
+  padding-#{$aa}: $bb;
+}
 .but{
   height: 65px;
   width: 100%;
@@ -119,13 +122,13 @@ export default {
   }
 }
 .xx{
-  padding-left: 100px;
+  @include cha("left",100px);
 }
 .data{
   float:right;
   line-height: 66px;
-  padding-right: 20px;
   font-size: 10px;
+  @include cha("right",20px);
   ul{
    @extend %yy;
     li:first-child{
