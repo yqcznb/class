@@ -9,8 +9,6 @@
               <i slot="suffix" class="el-input__icon el-icon-search"></i>
             </el-input>
             <div class="choice">
-
-
               <el-select v-model="choiceKey" size="small" placeholder="请选择" @change='choiceChange'>
                <el-option  v-for="item in options" :key="item.id"
                 :label="item.value" :value="item.id">
@@ -104,7 +102,8 @@ export default {
           choiceKey:'1',
           options:[{id:'1',value:'按教师排课'},{id:'2',value:'按课程排课'}],
           // 列表数据
-          listData:{
+          listData:[],
+          listDataMock:{
             listTeacher:[{id:'1',name:'李XX'},{id:'2',name:'王XX'},{id:'3',name:'周XX'}],
             listClass:[{id:'1',name:'C++',join:0},{id:'2',name:'JAVA',join:0},{id:'3',name:'PHP',join:0}]
           },
@@ -133,7 +132,7 @@ export default {
         }else{
           this.placeholder = '请输入课程名称';
           // 模拟切换数据
-          this.listData = this.listDataMock['listTeacher'];
+          this.listData = this.listDataMock['listClass'];
         }
       },
       // 选择或反选
