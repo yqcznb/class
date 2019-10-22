@@ -21,7 +21,7 @@
               </div>
             </div>
             <div class="list">
-              <div class="list-item" v-for="e in listData[liseKey]" :key="e.id"  >
+              <div class="list-item" v-for="e in listData[liseKey]" :key="e.id"  ><!-- listdata -->
                 <el-popover v-if='e.join != undefined' placement="right" width="40" trigger="click">
                   <div>
                     <div :class="{classNum:true,active:e.join == 0}" @click="e.join = 0">不连</div>
@@ -48,7 +48,7 @@
           </div>
           <div class="left-btn">
             <div class="next" @click="nextMove">
-              <i class="el-icon-right"></i>
+              <i><img src="https://upload-images.jianshu.io/upload_images/19325457-b0eba5387a8299b9.png" width="70px" height="70px"></i>
             </div>
           </div>
         </div>
@@ -192,13 +192,9 @@ export default {
     align-items: center;
   }
   .main .left .left-btn .next{
-    color: #fff;
-    font-size: 50px;
     position: absolute;
     width: 50px;
     height: 50px;
-    border: 2px solid #fff;
-    border-radius: 50px;
     line-height: 48px;
     cursor: pointer;
   }
