@@ -116,7 +116,7 @@ export default {
 
                 this.stateFlag = 'tchLogin';
 
-                this.skip_link = '/tch_index';
+                this.skip_link = '/teacher';
             }
             else if(url == login_img_ur) {
                 // 图片切换
