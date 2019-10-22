@@ -10,6 +10,7 @@
             </el-input>
             <div class="choice">
 
+
               <el-select v-model="choiceKey" size="small" placeholder="请选择" @change='choiceChange'>
                <el-option  v-for="item in options" :key="item.id"
                 :label="item.value" :value="item.id">
@@ -22,7 +23,7 @@
               </div>
             </div>
             <div class="list">
-              <div class="list-item" v-for="e in listData" :key="e.id"  >
+              <div class="list-item" v-for="e in listData[liseKey]" :key="e.id"  >
                 <el-popover v-if='e.join != undefined' placement="right" width="40" trigger="click">
                   <div>
                     <div :class="{classNum:true,active:e.join == 0}" @click="e.join = 0">不连</div>
@@ -103,11 +104,11 @@ export default {
           choiceKey:'1',
           options:[{id:'1',value:'按教师排课'},{id:'2',value:'按课程排课'}],
           // 列表数据
-          listData:[],
-          listDataMock:{
+          listData:{
             listTeacher:[{id:'1',name:'李XX'},{id:'2',name:'王XX'},{id:'3',name:'周XX'}],
             listClass:[{id:'1',name:'C++',join:0},{id:'2',name:'JAVA',join:0},{id:'3',name:'PHP',join:0}]
           },
+          liseKey:'listTeacher',
           // 左边所选列表
           listChoice:[],
           tableData:JSON.parse(JSON.stringify(TABLEDATA.tableData)),
@@ -116,7 +117,7 @@ export default {
         }
     },
     created:function(){
-      // 模拟初始化数据
+      // 初始化数据
       this.listData = this.listDataMock['listTeacher'];
     },
     methods:{
@@ -127,7 +128,7 @@ export default {
         this.tableData = JSON.parse(JSON.stringify(TABLEDATA.tableData));
         if(this.choiceKey == '1'){
           this.placeholder = '请输入教师名称';
-          // 模拟切换数据
+          // 接受数据，模拟切换数据
           this.listData = this.listDataMock['listTeacher'];
         }else{
           this.placeholder = '请输入课程名称';
@@ -167,7 +168,7 @@ export default {
           this.btnText = '禁止排课';
         }
       },
-      // 跳转下一个
+      // 跳转下一步
       nextMove(){
 
       }
@@ -375,10 +376,10 @@ export default {
   .main .right .right-item .click .iconfont.iconmsnui-forbid{
     color:#d81e06;
   }
-  .main .right .right-item .click .iconfont.{
+  .main .right .right-item .click {
     color:#000;
   }
-  .iconyunxu{
+  .iconfont.iconyunxu{
     color:#17ab79
   }
   .upload{
