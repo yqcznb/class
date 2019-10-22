@@ -10,8 +10,6 @@
             </el-input>
             <div class="choice">
 
-
-
               <el-select v-model="choiceKey" size="small" placeholder="请选择" @change='choiceChange'>
                <el-option  v-for="item in options" :key="item.id"
                 :label="item.value" :value="item.id">
@@ -169,7 +167,7 @@ export default {
           this.btnText = '禁止排课';
         }
       },
-      // 跳转下一步
+      // 跳转下一个
       nextMove(){
 
       }
@@ -281,10 +279,6 @@ export default {
   .main .left .left-main .list .list-item .names .joinClass{
     position: absolute;
     transform:rotate(-45deg);
-    -ms-transform:rotate(-45deg); /* Internet Explorer */
-    -moz-transform:rotate(-45deg); /* Firefox */
-    -webkit-transform:rotate(-45deg); /* Safari 和 Chrome */
-    -o-transform:rotate(-45deg); /* Opera */
     background: #000;
     color: #fff;
     font-size: 12px;
@@ -381,8 +375,11 @@ export default {
   .main .right .right-item .click .iconfont.iconmsnui-forbid{
     color:#d81e06;
   }
-  .main .right .right-item .click .iconfont.iconyunxu{
+  .main .right .right-item .click .iconfont.{
     color:#000;
+  }
+  .iconyunxu{
+    color:#17ab79
   }
   .upload{
     width: 100%;
