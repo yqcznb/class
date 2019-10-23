@@ -128,7 +128,7 @@ export default {
                 this.login_content_ur = login_content_ul;
                 this.login_content_ul = login_content_down;
 
-                this.stateFlag = 'tchLogin';
+                this.stateFlag = 'stuLogin';
 
                 this.skip_link = '/stu_index';
             }
