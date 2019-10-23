@@ -21,7 +21,7 @@
               </div>
             </div>
             <div class="list">
-              <div class="list-item" v-for="e in listData[liseKey]" :key="e.id"  ><!-- listdata -->
+              <div class="list-item" v-for="e in listData" :key="e.id"  > 
                 <el-popover v-if='e.join != undefined' placement="right" width="40" trigger="click">
                   <div>
                     <div :class="{classNum:true,active:e.join == 0}" @click="e.join = 0">不连</div>
