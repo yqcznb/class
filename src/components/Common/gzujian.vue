@@ -32,13 +32,11 @@
                   <i class="iconfont iconiconfontshangchuan"></i>
                   </el-tooltip>
               </el-menu-item>
-              <router-link to="/Administrator/Display_one">
-               <el-menu-item index="1-2" style='padding-left:0px!important;'>
+               <el-menu-item index="1-2" style='padding-left:0px!important;' @click.native = "gchangePage('/Administrator/Display_one')">
                   <el-tooltip class="item" effect="dark" content="显示" placement="right">
                   <i class="iconfont iconxianshi"></i>
                   </el-tooltip>
               </el-menu-item>
-              </router-link>
               <router-link to="/Administrator/guize1" tag="div">
                <el-menu-item index="1-3" style='padding-left:0px!important;'>
                   <el-tooltip class="item" effect="dark" content="模板上传下载" placement="right">
