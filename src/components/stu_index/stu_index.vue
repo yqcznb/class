@@ -196,147 +196,167 @@ export default {
 };
 </script>
 
-<style scoped>
-*{margin: 0;padding: 0;list-style: none;}
-.container{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    overflow: hidden;
+<style scoped lang='scss'>
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
-.interface{
-    position: absolute;
-    width: 86%;
-    height: 80%;
-    left: 7%;
-    top: 5%;
-    background: rgba(0,0,0, 0.7);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.7);
-}
-    /* 标题 */
-    .interface_title{
-        font-size: 36px;
-        color: rgb(255, 255, 255);
-        font-style: inherit;
-        letter-spacing: 6.8px;
-        line-height: 43px;
-        text-decoration: none;
-        margin-top: 2%;
-    }
-        .hr-inline{
-            display: inline-block;
-            height: 3px;
-            width: 15%;
-            background-color: rgb(255, 255, 255);
-            background-repeat:no-repeat;
-            position: relative;
-            top: -10px;
-            margin: 0 10px;
-        }
-    /* 格式栏 */
-    .table_bar{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        width: 100%;
-    }
-        .table_bar button{
-            display: inline-block;
-            height: 40px;
-            width: 80px;
-            border-radius: 5px;
-            border: 1px rgb(204, 204, 204) solid;
-            margin-top: 1.5%;
-        }
-     /*课表界面*/
-    .interface_table{
-        display: flex;
-        color: rgb(81, 69, 69);
-        margin: 0 auto;
-        margin-top: 2%;
-        width: 72%;
-    }
-        table{
-            width: 100%;
-        }
-            tr,td{
-                border: 0;
-            }
-            thead td{
-                background-color: rgb(239, 193, 115);
-                height: 50px;
-                width: 70px;
-                border-radius: 8px;
-            }
-            .tab_firstCol{
-                background-color: rgb(204, 204, 204);
-                color: rgb(255, 255, 255);
-                font-size: 14px;
-            }
-            tbody td{
-                background-color: rgb(122, 196, 225);
-                font-family: 'fzchsjt';
-                font-size: 12px;
-                border-radius: 8px;
-            }
-        /* 下载按钮 */
-        .download{
-            position: absolute;
-            top: 536px;
-            left: 1450px;
-            color: rgba(17, 170, 137, 0.733);
-        }
-        .iconfont.iconxiazai{
-            font-size: 150px;
-        }
-        /* 设置界面 */
-         .interface_setting{
-            display: flex;
-            justify-content: center;
-            margin-top: 8%;
-         }
-        
-        .setting_part{
-            display: inline-flex;
-            flex-direction: column;
-            width: 30%;
-        }
-            .setting_part i{
-                font-size: 220px;
-                color: rgb(255, 255, 255);
-            }
-            .setting_name{
-                font-size: 30px;
-                color: rgb(255, 255, 255);
-            }
-            /* 修改密码 */
-            .admin_change_pass {
+.stu_interface {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+
+    .interface {
+        position: absolute;
+        width: 86%;
+        height: 80%;
+        left: 7%;
+        top: 5%;
+        background: rgba(0,0,0, 0.7);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.7);
+    
+        /* 标题 */
+        .interface_title {
+            font-size: 36px;
+            color: rgb(255, 255, 255);
+            font-style: inherit;
+            letter-spacing: 6.8px;
+            line-height: 43px;
+            text-decoration: none;
+            margin-top: 2%;
+
+            .hr-inline {
+                display: inline-block;
+                height: 3px;
+                width: 15%;
+                background-color: rgb(255, 255, 255);
+                background-repeat: no-repeat;
                 position: relative;
-                width: 100%;
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
+                top: -10px;
+                margin: 0 10px;
             }
-                .change_pass_box {
-                    border: 3px solid rgb(255, 255, 255);
-                    border-radius: 15px;
-                    width: 13em;
-                    /* min-width: 230px; */
-                    margin: 0 auto;
-                    padding: 1em 3ex 0;
-                   
-                } 
-                    .pass_line {
-                        display: flex;
-                        justify-content: space-around;
-                        margin-bottom: 1em;
-                    }
-                        .pass_line_btn {
-                            display: flex;
-                            justify-content: space-between;
-                        }
+        }
+    }
+}
+/* 格式栏 */
+.table_bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+
+  button {
+    display: inline-block;
+    height: 40px;
+    width: 80px;
+    border-radius: 5px;
+    border: 1px rgb(204, 204, 204) solid;
+    margin-top: 1.5%;
+  }
+}
+/*课表界面*/
+.interface_table {
+  display: flex;
+  color: rgb(81, 69, 69);
+  margin: 0 auto;
+  margin-top: 2%;
+  width: 72%;
+
+  table {
+    width: 100%;
+    thead{
+    td {
+    background-color: rgb(239, 193, 115);
+    height: 50px;
+    width: 70px;
+    border-radius: 8px;
+    }
+    }
+  }
+}
+
+tr,td {
+  border: 0;
+}
+.tab_firstCol {
+  background-color: rgb(204, 204, 204);
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+}
+tbody {
+  td {
+    background-color: rgb(122, 196, 225);
+    font-family: 'fzchsjt';
+    font-size: 12px;
+    border-radius: 8px;
+  }
+}
+/* 下载按钮 */
+.download {
+  position: absolute;
+  top: 536px;
+  left: 1450px;
+  color: rgba(17, 170, 137, 0.733);
+
+  .iconfont {
+    &.iconxiazai {
+        font-size: 150px;
+    }
+  }
+}
+/* 设置界面 */
+.interface_setting {
+  display: flex;
+  justify-content: center;
+  margin-top: 8%;
+
+  .setting_part {
+    display: inline-flex;
+    flex-direction: column;
+    width: 30%;
+
+    i {
+        font-size: 220px;
+        color: rgb(255, 255, 255);
+    }
+  
+    .setting_name {
+        font-size: 30px;
+        color: rgb(255, 255, 255);
+    }
+  }
+}
+/* 修改密码 */
+.admin_change_pass {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .change_pass_box {
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 15px;
+    width: 13em;
+    margin: 0 auto;
+    padding: 1em 3ex 0;
+    
+    .pass_line {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 1em;
+    
+    .pass_line_btn {
+        display: flex;
+        justify-content: space-between;
+    }
+    }
+  }
+}
 </style>
