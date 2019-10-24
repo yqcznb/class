@@ -136,6 +136,7 @@ export default {
         }
       },
       // 选择或反选
+      ///此处标记选中id进行下一步操作
       choice(id){
         let index = this.listChoice.indexOf(id);
         if(index == -1){
@@ -143,6 +144,7 @@ export default {
         }else{
           this.listChoice.splice(index,1);
         }
+        
       },
       // 选择时间
       clickNode(key,index){

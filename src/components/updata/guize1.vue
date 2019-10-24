@@ -38,7 +38,7 @@ export default {
 </script>
 <style scoped>
   .icon-img{
-    margin: 80px auto auto auto;
+    margin: 50px auto auto auto;
     width: 300px;
   }
   .iconfont.iconiconfontxiazai{
