@@ -11,6 +11,7 @@ import adminSettings from '@/components/Administrator/adminSettings'
 import change_pass from '@/components/Administrator/change_pass'
 import Display_one from '@/components/Administrator/Display_one'
 import adminadd from '@/components/Administrator/adminadd'
+import adminmodule from '@/components/Administrator/adminmodule'
 
 // guize相关
 import Guize1 from '@/components/updata/guize1'
@@ -92,6 +93,12 @@ export default new Router({
           path: 'adminadd',
           name: 'adminadd',
           component: adminadd,
+          meta: { adminLogin: true },
+        },
+        {
+          path: 'adminmodule',
+          name: 'adminmodule',
+          component: adminmodule,
           meta: { adminLogin: true },
         },
         {     

@@ -150,7 +150,7 @@ export default {
         table{
             display: flex;
             flex-direction: column;
-            width: 100%;
+            width: 90%;
             tr,td{
                 display: inline-flex;
                 justify-content: center;
