@@ -28,7 +28,7 @@
             </el-tooltip>
           </el-menu-item>
           <el-menu-item index="4" style='padding-left:20px!important;'
-          @click.native="changePage('/teacher')">
+          @click.native="changePage('/teacher/tch_information')">
             <el-tooltip class="item" effect="dark" content="主页" placement="right">
                 <i class="iconfont iconzhuye1"></i>
             </el-tooltip>
@@ -81,7 +81,4 @@ export default {
  .tzujian{
    @extend %gg;
  }
-
-
- 
 </style>
