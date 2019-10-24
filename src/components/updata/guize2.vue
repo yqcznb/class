@@ -31,7 +31,7 @@
       </div>
 
       <div class="next" title="下一步">
-        <router-link to="/Administrator/guize3" tag="span"><i class="el-icon-right"></i></router-link>
+        <router-link to="/Administrator/guize3" tag="span"><i><img src="https://upload-images.jianshu.io/upload_images/19325457-b0eba5387a8299b9.png" width="70px" height="70px"></i></router-link>
       </div>
     </div>
 </div>
@@ -53,6 +53,7 @@ export default {
           action:""
         }
     },
+    ///接口数据
     methods:{
       fnOne(){
 
@@ -89,17 +90,12 @@ export default {
   position: relative;
 }
 .next{
-  color: #fff;
   font-size: 50px;
   position: absolute;
   right: 30px;
   bottom: 30px;
   width: 50px;
   height: 50px;
-  border: 2px solid #fff;
-  border-radius: 50px;
-  line-height: 48px;
   cursor: pointer;
 }
-
 </style>

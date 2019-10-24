@@ -41,7 +41,7 @@ export default {
     // },
     methods: {
         cancel_change_pass() {
-            this.$router.push('/Administrator/adminSettings');
+            this.$router.push('/teacher/tch_setting');
         }
     }
 }
@@ -51,7 +51,7 @@ export default {
     position: relative;
     width: 100%;
     height: 100%;
-    .line_bar {
+    .line_bar{
         min-width: 330px;
         width: 55%;
         display: flex;

@@ -5,7 +5,7 @@
                 <span class="hr-inline"></span>设置<span class="hr-inline"></span>
             </div>
             <div class="main-setting">
-                <div class="main-setting-item">
+                <div class="main-setting-item" @click="changePass">
                     <i class="iconfont iconxiugaimima"></i>
                     <span class="main-setting-item-title">修改密码</span>
                 </div>
@@ -57,6 +57,9 @@ export default {
                 this.$router.push('/');
                 
             })
+        },
+        changePass(){
+            this.$router.push('/teacher/tch_change_pass')
         }
     },
     components: {

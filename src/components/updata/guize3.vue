@@ -9,7 +9,6 @@
               <i slot="suffix" class="el-input__icon el-icon-search"></i>
             </el-input>
             <div class="choice">
-
               <el-select v-model="choiceKey" size="small" placeholder="请选择" @change='choiceChange'>
                <el-option  v-for="item in options" :key="item.id"
                 :label="item.value" :value="item.id">
@@ -22,7 +21,7 @@
               </div>
             </div>
             <div class="list">
-              <div class="list-item" v-for="e in listData" :key="e.id"  >
+              <div class="list-item" v-for="e in listData" :key="e.id"  > 
                 <el-popover v-if='e.join != undefined' placement="right" width="40" trigger="click">
                   <div>
                     <div :class="{classNum:true,active:e.join == 0}" @click="e.join = 0">不连</div>
@@ -49,7 +48,7 @@
           </div>
           <div class="left-btn">
             <div class="next" @click="nextMove">
-              <i class="el-icon-right"></i>
+              <i><img src="https://upload-images.jianshu.io/upload_images/19325457-b0eba5387a8299b9.png" width="70px" height="70px"></i>
             </div>
           </div>
         </div>
@@ -108,6 +107,7 @@ export default {
             listTeacher:[{id:'1',name:'李XX'},{id:'2',name:'王XX'},{id:'3',name:'周XX'}],
             listClass:[{id:'1',name:'C++',join:0},{id:'2',name:'JAVA',join:0},{id:'3',name:'PHP',join:0}]
           },
+          liseKey:'listTeacher',
           // 左边所选列表
           listChoice:[],
           tableData:JSON.parse(JSON.stringify(TABLEDATA.tableData)),
@@ -116,7 +116,7 @@ export default {
         }
     },
     created:function(){
-      // 模拟初始化数据
+      // 初始化数据
       this.listData = this.listDataMock['listTeacher'];
     },
     methods:{
@@ -127,12 +127,12 @@ export default {
         this.tableData = JSON.parse(JSON.stringify(TABLEDATA.tableData));
         if(this.choiceKey == '1'){
           this.placeholder = '请输入教师名称';
-          // 模拟切换数据
+          // 接受数据，模拟切换数据
           this.listData = this.listDataMock['listTeacher'];
         }else{
           this.placeholder = '请输入课程名称';
           // 模拟切换数据
-          this.listData = this.listDataMock['listTeacher'];
+          this.listData = this.listDataMock['listClass'];
         }
       },
       // 选择或反选
@@ -167,7 +167,7 @@ export default {
           this.btnText = '禁止排课';
         }
       },
-      // 跳转下一个
+      // 跳转下一步
       nextMove(){
 
       }
@@ -192,13 +192,9 @@ export default {
     align-items: center;
   }
   .main .left .left-btn .next{
-    color: #fff;
-    font-size: 50px;
     position: absolute;
     width: 50px;
     height: 50px;
-    border: 2px solid #fff;
-    border-radius: 50px;
     line-height: 48px;
     cursor: pointer;
   }
@@ -375,10 +371,10 @@ export default {
   .main .right .right-item .click .iconfont.iconmsnui-forbid{
     color:#d81e06;
   }
-  .main .right .right-item .click .iconfont.{
+  .main .right .right-item .click {
     color:#000;
   }
-  .iconyunxu{
+  .iconfont.iconyunxu{
     color:#17ab79
   }
   .upload{

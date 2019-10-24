@@ -6,6 +6,7 @@ import teacher from '@/components/teacher/tch_index'
 import tch_setting from '@/components/teacher/tch_setting'
 import tch_information from '@/components/teacher/tch_information'
 import tch_table from '@/components/teacher/tch_table'
+import tch_change_pass from '@/components/teacher/change_pass'
 import Administrator from '@/components/Administrator/Administrator'
 import adminSettings from '@/components/Administrator/adminSettings'
 import change_pass from '@/components/Administrator/change_pass'
@@ -59,6 +60,14 @@ export default new Router({
           path: 'tch_table',
           name: 'tch_table',
           component: tch_table,
+          meta: {
+            tchLogin: true
+          },
+        },
+        {
+          path: 'tch_change_pass',
+          name: 'tch_change_pass',
+          component: tch_change_pass,
           meta: {
             tchLogin: true
           },
