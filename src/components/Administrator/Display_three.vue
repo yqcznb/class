@@ -3,7 +3,12 @@
     <div class="dth_step_bar">
       <STEP :stepData='stepData'></STEP>
     </div>
-    
+    <div class="admin_dl_area">
+      <div class="admin_dl_btn_bar">
+        <button></button> <button></button> 
+      </div>
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 <script>
@@ -30,5 +35,17 @@ export default {
 @import "../../assets/css/admin";
   .dth_step_bar {
     @extend %step_bar;
+  }
+  .admin_dl_area {
+    position: absolute;
+    width: 100%;
+    height: 75%;
+    border: 1px solid red;
+    .admin_dl_btn_bar {
+      border: 1px solid black;
+      button {
+        margin: 0;
+      }
+    }
   }
 </style>
