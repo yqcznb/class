@@ -10,7 +10,10 @@ import tch_change_pass from '@/components/teacher/change_pass'
 import Administrator from '@/components/Administrator/Administrator'
 import adminSettings from '@/components/Administrator/adminSettings'
 import change_pass from '@/components/Administrator/change_pass'
+
 import Display_one from '@/components/Administrator/Display_one'
+import Display_two from '@/components/Administrator/Display_two'
+import Display_three from '@/components/Administrator/Display_three'
 
 // guize相关
 import Guize1 from '@/components/updata/guize1'
@@ -94,6 +97,18 @@ export default new Router({
           path: 'Display_one',
           name: 'Display_one',
           component: Display_one,
+          meta: { adminLogin: true },
+        },
+        {
+          path: 'Display_two',
+          name: 'Display_two',
+          component: Display_two,
+          meta: { adminLogin: true },
+        },
+        {
+          path: 'Display_three',
+          name: 'Display_three',
+          component: Display_three,
           meta: { adminLogin: true },
         },
         {
