@@ -41,7 +41,7 @@ export default {
     // },
     methods: {
         cancel_change_pass() {
-            this.$router.push('/Administrator/adminSettings');
+            this.$router.push('/teacher/tch_setting');
         }
     }
 }

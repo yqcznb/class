@@ -9,34 +9,30 @@
           background-color="transparent"
           text-color="#fff"
         >
-        <router-link to="/teacher/tch_setting" tag="div">
-          <el-menu-item index="1" style='padding-left:20px!important;margin-top:3em; text-align:center'>
+          <el-menu-item index="1" style='padding-left:20px!important;margin-top:3em; text-align:center' 
+          @click.native="changePage('/teacher/tch_setting')">
             <el-tooltip class="item" effect="dark" content="设置" placement="right" >
               <i class="iconfont iconshezhi"></i>
             </el-tooltip>
           </el-menu-item>
-        </router-link>
-        <router-link to="/teacher/tch_information" tag="div">
-          <el-menu-item index="2" style='padding-left:20px!important;'>
+          <el-menu-item index="2" style='padding-left:20px!important;'
+          @click.native="changePage('/teacher/tch_information')">
               <el-tooltip class="item" effect="dark" content="信息" placement="right">
                 <i class="iconfont iconxinxi1"></i>
             </el-tooltip>
           </el-menu-item>
-        </router-link>
-        <router-link to="/teacher/tch_table" tag="div">
-            <el-menu-item index="3" style='padding-left:20px!important;'>
+            <el-menu-item index="3" style='padding-left:20px!important;'
+            @click.native="changePage('/teacher/tch_table')">
               <el-tooltip class="item" effect="dark" content="课程表" placement="right">
                 <i class="iconfont iconkechengbiao"></i>
             </el-tooltip>
           </el-menu-item>
-        </router-link>
-        <router-link to="/teacher" tag="div">
-          <el-menu-item index="4" style='padding-left:20px!important;'>
+          <el-menu-item index="4" style='padding-left:20px!important;'
+          @click.native="changePage('/teacher/tch_information')">
             <el-tooltip class="item" effect="dark" content="主页" placement="right">
                 <i class="iconfont iconzhuye1"></i>
             </el-tooltip>
           </el-menu-item>
-        </router-link>
         </el-menu>
   </div>
     <but></but>
@@ -70,6 +66,11 @@ export default {
       handleClose(key, keyPath) {
         console.log(key, keyPath);
       },
+      changePage(url) {
+      this.$router.push({
+        path: url
+      })
+    }
   }
 }
 </script>
@@ -80,7 +81,4 @@ export default {
  .tzujian{
    @extend %gg;
  }
-
-
- 
 </style>

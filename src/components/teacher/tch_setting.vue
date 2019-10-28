@@ -1,17 +1,17 @@
 <template>
     <div class="main">
         <!-- 设置开始 -->
-            <div class="main-title">
-                <span class="hr-inline"></span>设置<span class="hr-inline"></span>
+            <div class="line_bar">
+                <hr> <span class="settings_title">设置</span> <hr>
             </div>
-            <div class="main-setting">
-                <div class="main-setting-item">
+            <div class="settings_choose">
+                <div class="settings_update_pass" @click="changePass">
                     <i class="iconfont iconxiugaimima"></i>
-                    <span class="main-setting-item-title">修改密码</span>
+                    <span class="set_up_pass_title">修改密码</span>
                 </div>
-                <div class="main-setting-item" @click="tch_signout">
+                <div class="settings_signout" @click="tch_signout">
                     <i class="iconfont icontuichudenglu"></i>
-                    <span class="main-setting-item-title">退出登录</span>
+                    <span class="set_sign_title">退出登录</span>
                 </div>
             </div>
             <!-- 设置结束 -->
@@ -57,6 +57,9 @@ export default {
                 this.$router.push('/');
                 
             })
+        },
+        changePass(){
+            this.$router.push('/teacher/tch_change_pass')
         }
     },
     components: {
@@ -65,6 +68,9 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-
+<style lang="scss">
+@import "../../assets/css/common_scss/settings";;
+.main{
+    @extend %settings;
+}
 </style>

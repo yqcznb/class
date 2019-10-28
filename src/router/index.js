@@ -6,10 +6,17 @@ import teacher from '@/components/teacher/tch_index'
 import tch_setting from '@/components/teacher/tch_setting'
 import tch_information from '@/components/teacher/tch_information'
 import tch_table from '@/components/teacher/tch_table'
+import tch_change_pass from '@/components/teacher/change_pass'
 import Administrator from '@/components/Administrator/Administrator'
 import adminSettings from '@/components/Administrator/adminSettings'
 import change_pass from '@/components/Administrator/change_pass'
+
 import Display_one from '@/components/Administrator/Display_one'
+import Display_two from '@/components/Administrator/Display_two'
+import Display_three from '@/components/Administrator/Display_three'
+import profess_c_dl from '@/components/Administrator/admin_schedual_dl/profess_c_dl'
+import teacher_n_dl from '@/components/Administrator/admin_schedual_dl/teacher_n_dl'
+
 import adminadd from '@/components/Administrator/adminadd'
 import adminmodule from '@/components/Administrator/adminmodule'
 
@@ -63,6 +70,14 @@ export default new Router({
             tchLogin: true
           },
         },
+        {
+          path: 'tch_change_pass',
+          name: 'tch_change_pass',
+          component: tch_change_pass,
+          meta: {
+            tchLogin: true
+          },
+        },
       ]
     },
     {
@@ -89,6 +104,33 @@ export default new Router({
           component: Display_one,
           meta: { adminLogin: true },
         },
+        
+        {     
+          path: 'Display_two',
+          name: 'Display_two',
+          component: Display_two,
+          meta: { adminLogin: true },
+        },
+        {
+          path: 'Display_three',
+          name: 'Display_three',
+          component: Display_three,
+          meta: { adminLogin: true },
+          children: [
+            {
+              path: 'profess_c_dl',
+              name: 'profess_c_dl',
+              component: profess_c_dl,
+              meta: { adminLogin: true },
+            },
+            {
+              path: 'teacher_n_dl',
+              name: 'teacher_n_dl',
+              component: teacher_n_dl,
+              meta: { adminLogin: true },
+            },
+          ]
+        },
         {
           path: 'adminadd',
           name: 'adminadd',
@@ -101,7 +143,7 @@ export default new Router({
           component: adminmodule,
           meta: { adminLogin: true },
         },
-        {     
+        {
           path: 'guize1',
           name: 'guize1',
           component: Guize1,
