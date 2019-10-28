@@ -46,47 +46,13 @@ export default {
     }
 }
 </script>
-<style lang="scss" scoped>
+
+<style lang="scss">
+@import "../../assets/css/common_scss/settings";
 .admin_change_pass {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    .line_bar{
-        min-width: 330px;
-        width: 55%;
-        display: flex;
-        margin: 2em auto;
-        margin-bottom: 7em;
-        justify-content: space-between;
-        align-items: center;
-        hr {
-            width: 35%;
-            height: 2px;
-            background-color: white;
-        }
-        .settings_title {
-            font-size: 2em;
-            color: white;
-        }
-        
-    }
+    @extend %settings;
     .change_pass_box {
-        border: 3px solid white;
-        border-radius: 15px;
-        width: 11em;
-        // min-width: 230px;
-        margin: 0 auto;
-        padding: 1em 3ex 0;
-        .pass_line {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 1em;
-            .pass_line_btn {
-                display: flex;
-                justify-content: space-between;
-            }
-            
-        }
+        @extend %change_pass_box;
     }
 }
 </style>

@@ -71,11 +71,18 @@ export default {
             login_content_ul: '我是老师',
             login_content_ur: '我是学生',
             login_content_down: '我是管理员',
-            stateFlag: 'adminLogin',
+            stateFlagleft: 'tchLogin',
+            stateFlagright: 'stuLogin',
+            stateFlagdown: 'adminLogin',
+            skip_link_down: '/Administrator',
+            skip_link_left: '/teacher',
+            skip_link_right: '/stu_index',
+
             login_img_click: true,
             input_count: '15611111111',
             input_pass: '123',
-            skip_link: '/Administrator',
+            // skip_link: '/Administrator',
+            
         }
     },
     created() {
@@ -104,6 +111,14 @@ export default {
             let login_content_ur = this.login_content_ur;
             let login_content_down = this.login_content_down;
 
+            let skip_link_left = this.skip_link_left;
+            let skip_link_right = this.skip_link_right;
+            let skip_link_down = this.skip_link_down;
+
+            let stateFlagleft = this.stateFlagleft;
+            let stateFlagright = this.stateFlagright;
+            let stateFlagdown = this.stateFlagdown;
+
             if(url == login_img_ul) {
                 // 图片切换
                 this.login_img_down = url;
@@ -114,9 +129,13 @@ export default {
                 this.login_content_ul = login_content_ur;
                 this.login_content_ur = login_content_down;
 
-                this.stateFlag = 'tchLogin';
+                this.stateFlagdown = stateFlagleft;
+                this.stateFlagleft = stateFlagright;
+                this.stateFlagright = stateFlagdown;
 
-                this.skip_link = '/teacher';
+                this.skip_link_down = skip_link_left;
+                this.skip_link_left = skip_link_right;
+                this.skip_link_right = skip_link_down;
             }
             else if(url == login_img_ur) {
                 // 图片切换
@@ -128,9 +147,13 @@ export default {
                 this.login_content_ur = login_content_ul;
                 this.login_content_ul = login_content_down;
 
-                this.stateFlag = 'stuLogin';
+                this.stateFlagdown = stateFlagright;
+                this.stateFlagright = stateFlagleft;
+                this.stateFlagleft = stateFlagdown;
 
-                this.skip_link = '/stu_index';
+                this.skip_link_down = skip_link_right;
+                this.skip_link_right = skip_link_left;
+                this.skip_link_left = skip_link_down;
             }
             else {}
             this.login_img_click = !this.login_img_click;
@@ -153,14 +176,14 @@ export default {
                             message: '登录成功!'
                         });
                         //设置Vuex登录标志为true，默认userLogin为false
-                        this.$store.dispatch(this.stateFlag, true);
+                        this.$store.dispatch(this.stateFlagdown, true);
                         //Vuex在用户刷新的时候userLogin会回到默认值false，所以我们需要用到HTML5储存
                         //我们设置一个名为Flag，值为isLogin的字段，作用是如果Flag有值且为isLogin的时候，证明用户已经登录了。
-                        localStorage.setItem("Flag", this.stateFlag);
+                        localStorage.setItem("Flag", this.stateFlagdown);
                         localStorage.setItem("loginState",1);
-                        localStorage.setItem("indexPage",this.skip_link);
+                        localStorage.setItem("indexPage",this.skip_link_down);
                         this.$router.push({
-                            path: this.skip_link
+                            path: this.skip_link_down
                         })
                     }else if(returnState == 0){
                         alert("账号或密码错误")
