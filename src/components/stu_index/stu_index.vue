@@ -59,17 +59,17 @@
             </div>
 
             <!-- 设置 -->
-            <div class="interface_title" v-if="setting">
-                <span class="hr-inline"></span>设置<span class="hr-inline"></span>
-            </div>
-            <div class="interface_setting" v-if="setting">
-                <div class="setting_part" @click="change">
-                    <i class="iconfont iconxiugaimima"></i>
-                    <span class="setting_name">修改密码</span>
+            <div class="admin_settings" v-if="setting">
+                <div class="line_bar">
+                    <hr> <span class="settings_title">设置</span> <hr>
                 </div>
-                <div class="setting_part" @click="output">
-                    <i class="iconfont icontuichudenglu"></i>
-                    <span class="setting_name">退出登录</span>
+                <div class="settings_choose">
+                    <div class="settings_update_pass" @click = "change">
+                        <span class="iconfont iconxiugaimima"></span> <span class="set_up_pass_title">修改密码</span>
+                    </div>
+                    <div class="settings_signout" @click="output">
+                        <span class="iconfont icontuichudenglu"></span> <span class="set_sign_title">退出登录</span>
+                    </div>
                 </div>
             </div>
 
@@ -211,24 +211,25 @@ export default {
 
     .interface {
         position: absolute;
-        width: 86%;
+        // width: 80%;
         height: 80%;
-        left: 7%;
-        top: 5%;
-        background: rgba(0,0,0, 0.7);
-        background-size: 100%;
-        background-repeat: no-repeat;
-        box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.7);
+        left: 0;
+        right: 0;
+        margin-top: 3em;
+        margin-right: 9ex;
+        margin-left: 6em;
+        background: rgba(0, 0, 0, 0.7);
+        box-shadow: 0 0 5ex 5ex rgba(0, 0, 0, 0.71);
     
         /* 标题 */
         .interface_title {
-            font-size: 36px;
+            font-size: 2em;
             color: rgb(255, 255, 255);
             font-style: inherit;
             letter-spacing: 6.8px;
             line-height: 43px;
             text-decoration: none;
-            margin-top: 2%;
+            margin-top: 2em;
 
             .hr-inline {
                 display: inline-block;
@@ -249,6 +250,7 @@ export default {
   flex-direction: row;
   justify-content: space-around;
   width: 100%;
+  font-family: 'fzchsjt';
 
   button {
     display: inline-block;
@@ -310,26 +312,48 @@ tbody {
   }
 }
 /* 设置界面 */
-.interface_setting {
-  display: flex;
-  justify-content: center;
-  margin-top: 8%;
-
-  .setting_part {
-    display: inline-flex;
-    flex-direction: column;
-    width: 30%;
-
-    i {
-        font-size: 220px;
-        color: rgb(255, 255, 255);
+.admin_settings{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    // padding: 7ex;
+    .line_bar,.settings_choose {
+        min-width: 330px;
+        display: flex;
+        margin: 2em auto;
+        margin-bottom: 10em;
+        justify-content: space-between;
+        align-items: center;
+        hr {
+            width: 35%;
+            height: 2px;
+            background-color: rgb(255, 255, 255);
+        }
+        .settings_title {
+            font-size: 2em;
+            color: rgb(255, 255, 255);
+        }
+        .settings_update_pass,.settings_signout {
+            display: flex;
+            cursor: pointer;
+            flex-direction: column;
+            align-items: center;
+            color: rgb(255, 255, 255);
+            .iconxiugaimima,.icontuichudenglu {
+                font-size: 11em;
+            }
+            .set_up_pass_title,.set_sign_title {
+                font-size: 4ex;
+            }
+        }
     }
-  
-    .setting_name {
-        font-size: 30px;
-        color: rgb(255, 255, 255);
+    .line_bar {
+        width: 55%;
     }
-  }
+    .settings_choose {
+        width: 47%;
+    }
+   
 }
 /* 修改密码 */
 .admin_change_pass {

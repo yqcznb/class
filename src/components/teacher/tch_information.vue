@@ -1,8 +1,8 @@
 <template>
     <div class="main">
         <!-- 当前课表内容开始 -->
-            <div class="main-title">
-                <span class="hr-inline"></span>当前课表<span class="hr-inline"></span>
+            <div class="line_bar">
+                <hr> <span class="settings_title">当前课表</span> <hr>
             </div>
             <div class="main-table">
                 <table>
@@ -68,5 +68,38 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+.main-table{
+        display: flex;
+        color: rgb(81, 69, 69);
+        margin: 0 auto;
+        margin-top: 2%;
+        width: 90%;
+        .table-time{
+            background-color: #cccccc;
+            font-family: 'zzgflh';
+            color: white;
+        }
+        table{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            tr,td{
+                display: inline-flex;
+                justify-content: center;
+                width: 100%;
+            }
+            td{
+                line-height: 2em;
+                margin: 5px 5px;
+                flex-grow: 1;
+            }
+            thead td{
+                background-color: rgb(239, 193, 115);   
+            }
+            tbody td{
+                font-family: 'fzchsjt';
+                background-color: rgb(122, 196, 225);
+            }    
+        }
+    }
 </style>

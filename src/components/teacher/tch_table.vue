@@ -1,7 +1,7 @@
 <template>
     <div class="main">
-        <div class="main-title">
-            <span class="hr-inline"></span>课表显示<span class="hr-inline"></span>
+        <div class="line_bar">
+            <hr> <span class="settings_title">课表显示</span> <hr>
         </div>
         <!-- 格式栏 -->
         <div class="table_bar">
