@@ -1,8 +1,9 @@
 <template>
   <div>
-    <div class="do_step_bar">
+    <div class="dtwo_step_bar">
       <STEP :stepData='stepData'></STEP>
     </div>
+    
   </div>
 </template>
 <script>
@@ -15,8 +16,8 @@ export default {
         // 步骤条参数 index:圈内文字 ， to：路由跳转地址  msg 底部显示文字 active 激活的index
         stepData:{
           list:[{index:1,to:'/Administrator/Display_one'},{index:2,to:'/Administrator/Display_two'},{index:3,to:'/Administrator/Display_three'}],
-          msg:'课  表  预  览',
-          active:1
+          msg:'课  表  调  整',
+          active:2
         }
       }
     },
@@ -26,8 +27,8 @@ export default {
 }
 </script>
 <style lang="scss">
-@import "../../assets/css/admin";
-  .do_step_bar {
+@import "../../../assets/css/admin";
+  .dtwo_step_bar {
     @extend %step_bar;
   }
 </style>

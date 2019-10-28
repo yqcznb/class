@@ -11,11 +11,9 @@ import Administrator from '@/components/Administrator/Administrator'
 import adminSettings from '@/components/Administrator/adminSettings'
 import change_pass from '@/components/Administrator/change_pass'
 
-import Display_one from '@/components/Administrator/Display_one'
-import Display_two from '@/components/Administrator/Display_two'
-import Display_three from '@/components/Administrator/Display_three'
-import profess_c_dl from '@/components/Administrator/admin_schedual_dl/profess_c_dl'
-import teacher_n_dl from '@/components/Administrator/admin_schedual_dl/teacher_n_dl'
+import Display_one from '@/components/Administrator/admin_display/Display_one'
+import Display_two from '@/components/Administrator/admin_display/Display_two'
+import Display_three from '@/components/Administrator/admin_display/Display_three'
 
 import adminadd from '@/components/Administrator/adminadd'
 import adminmodule from '@/components/Administrator/adminmodule'
@@ -116,20 +114,6 @@ export default new Router({
           name: 'Display_three',
           component: Display_three,
           meta: { adminLogin: true },
-          children: [
-            {
-              path: 'profess_c_dl',
-              name: 'profess_c_dl',
-              component: profess_c_dl,
-              meta: { adminLogin: true },
-            },
-            {
-              path: 'teacher_n_dl',
-              name: 'teacher_n_dl',
-              component: teacher_n_dl,
-              meta: { adminLogin: true },
-            },
-          ]
         },
         {
           path: 'adminadd',
