@@ -40,6 +40,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../../assets/css/common_scss/settings";
 .container{
     position: absolute;
     width: 100%;
@@ -78,8 +79,6 @@ export default {
     }
 }
 .main{
-    position: relative;
-    width: 100%;
-    height: 100%;
+    @extend %settings;
 }
 </style>

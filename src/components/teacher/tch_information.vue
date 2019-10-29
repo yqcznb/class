@@ -68,6 +68,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.line_bar{
+    margin: 1em auto;
+}
 .main-table{
         display: flex;
         color: rgb(81, 69, 69);
@@ -92,6 +95,8 @@ export default {
                 line-height: 2em;
                 margin: 5px 5px;
                 flex-grow: 1;
+                border: 1px solid;
+                border-radius: 5px;
             }
             thead td{
                 background-color: rgb(239, 193, 115);   
