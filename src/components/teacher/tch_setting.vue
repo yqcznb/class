@@ -68,8 +68,11 @@ export default {
 };
 </script>
 
-<style lang="scss">
-@import "../../assets/css/common_scss/settings";;
+<style lang="scss" scoped>
+@import "../../assets/css/common_scss/settings";
+.line_bar{
+    margin: 1em auto;
+}
 .main{
     @extend %settings;
 }
