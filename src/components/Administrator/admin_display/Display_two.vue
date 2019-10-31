@@ -3,9 +3,16 @@
     <div class="dtwo_step_bar">
       <STEP :stepData='stepData'></STEP>
     </div>
-    <div style="float: left;">
-      aaa
-    </div>
+    <!-- <div style="float: left;">
+      <div style="width: 50px; height: 250px; border: solid 3px white; border-radius: 10px; float: left;">
+      <i class="iconfont iconxuanze" style="color: #FFF; font-size: 30px;"></i>
+      <i class="iconfont iconjiaohuan2" style="color: #FFF; font-size: 30px;"></i>
+      <i class="iconfont iconyidong" style="color: #FFF; font-size: 30px;"></i>
+      <i class="iconfont icondelete" style="color: red; font-size: 30px;"></i>
+      <i class="iconfont iconchexiao" style="color: #FFF; font-size: 30px;"></i>
+      </div>
+      <div style="width: 3px; height: 500px; background: white; float: left; position: relative; left: 30px;"></div>
+    </div> -->
     <div class="admin_dl_area">
       <div class="admin_dl_btn_bar">
         <el-button @click="p_c_show = true" :autofocus = 'autofocus' type="primary" size="small" plain>按专业班级</el-button>
@@ -29,6 +36,21 @@
       </div>
     </div>
     <br><br>
+    <div style="float: left;">
+      <div style="width: 50px; height: 276px; border: solid 3px white; border-radius: 10px; float: left; position: relative; top: 30px;">
+        <br>
+        <i class="iconfont iconxuanze" style="color: #FFF; font-size: 30px;"></i>
+        <br><br>
+        <i class="iconfont iconjiaohuan2" style="color: #FFF; font-size: 30px;"></i>
+        <br><br>
+        <i class="iconfont iconyidong" style="color: #FFF; font-size: 30px;"></i>
+        <br><br>
+        <i class="iconfont icondelete" style="color: red; font-size: 30px;"></i>
+        <br><br>
+        <i class="iconfont iconchexiao" style="color: #FFF; font-size: 30px;"></i>
+      </div>
+      <div style="width: 3px; height: 500px; background: white; float: left; position: relative; left: 30px;"></div>
+    </div>
     <!-- 课表内容 -->
     <div class="main-table">
       <table>
@@ -58,7 +80,7 @@
           </tr>
           <tr>
             <td class="table-time2">08:25<br>~10:05</td>
-            <td></td>
+            <td>课程A<div style="position: relative; left:30px; top:30px;"><i class="iconfont iconbi" style="color: #FFF; font-size: 30px;"></i></div></td>
             <td></td>
             <td></td>
             <td></td>
