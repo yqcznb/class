@@ -44,7 +44,7 @@
                   </el-tooltip>
               </el-menu-item>
               </router-link>
-               <el-menu-item index="1-4" style='padding-left:0px!important;' @click.native = "gchangePage('/Administrator/adminadd')">
+               <el-menu-item index="1-4" style='padding-left:0px!important;' @click.native = "gchangePage('/Administrator/adminadd1')">
                   <el-tooltip class="item" effect="dark" content="添加" placement="right">
                   <i class="iconfont icontianjia"></i>
                   </el-tooltip>
