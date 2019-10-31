@@ -15,7 +15,9 @@
                 <button class="bar_three">格式三</button>
             </el-tooltip>
         </div>
-        <router-view></router-view>
+        <div class="format">
+            <router-view></router-view>
+        </div>
     </div>
 </template>
 
@@ -55,12 +57,18 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.format{
+    display: flex;
+    justify-content: center;
+}
 /* 格式栏 */
 .table_bar{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    width: 100%;
+    justify-content: space-between;
+    position: relative;
+    left: 30%;
+    width: 40%;
 }
     .table_bar button{
         font-family: 'fzchsjt';
@@ -71,7 +79,7 @@ export default {
         height: 35px;
         border-radius: 5px;
         border: 1px rgb(204, 204, 204) solid;
-        margin-top: 1%;
+        // margin-top: 1%;
         background-color: rgba(122, 196, 225, 0.91);
         color: white;
     }
