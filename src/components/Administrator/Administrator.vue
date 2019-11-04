@@ -48,6 +48,7 @@ export default {
     margin: 0;
     overflow: hidden;
     .back_shadow {
+        // border: 1px solid red;
         position: absolute;
         // width: 80%;
         height: 80%;
