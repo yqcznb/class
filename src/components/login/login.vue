@@ -163,19 +163,37 @@ export default {
                 alert('请输入用户名或密码');
             }
             else{
-                axios.get('http://no37.store:8080/AK/denglu1',{
-                    params: {
-                        yhzh:this.input_count,
-                        yhmm:this.input_pass,
-                    }
-                }).then(response=>{
-                    let returnState = response.data.jg;
-                    if(returnState == 1){
-                        this.$message({
-                            type: 'success',
-                            message: '登录成功!'
-                        });
-                        //设置Vuex登录标志为true，默认userLogin为false
+                // axios.get('http://no37.store:8080/AK/denglu1',{
+                //     params: {
+                //         yhzh:this.input_count,
+                //         yhmm:this.input_pass,
+                //     }
+                // }).then(response=>{
+                //     let returnState = response.data.jg;
+                //     if(returnState == 1){
+                //         this.$message({
+                //             type: 'success',
+                //             message: '登录成功!'
+                //         });
+                //         //设置Vuex登录标志为true，默认userLogin为false
+                //         this.$store.dispatch(this.stateFlagdown, true);
+                //         //Vuex在用户刷新的时候userLogin会回到默认值false，所以我们需要用到HTML5储存
+                //         //我们设置一个名为Flag，值为isLogin的字段，作用是如果Flag有值且为isLogin的时候，证明用户已经登录了。
+                //         localStorage.setItem("Flag", this.stateFlagdown);
+                //         localStorage.setItem("loginState",1);
+                //         localStorage.setItem("indexPage",this.skip_link_down);
+                //         this.$router.push({
+                //             path: this.skip_link_down
+                //         })
+                //     }else if(returnState == 0){
+                //         alert("账号或密码错误")
+                //     }
+                // })      //获取失败
+                // .catch(error=>{
+                //     // console.log(error);
+                //     alert('网络错误，不能访问');
+                // })
+                //设置Vuex登录标志为true，默认userLogin为false
                         this.$store.dispatch(this.stateFlagdown, true);
                         //Vuex在用户刷新的时候userLogin会回到默认值false，所以我们需要用到HTML5储存
                         //我们设置一个名为Flag，值为isLogin的字段，作用是如果Flag有值且为isLogin的时候，证明用户已经登录了。
@@ -185,14 +203,6 @@ export default {
                         this.$router.push({
                             path: this.skip_link_down
                         })
-                    }else if(returnState == 0){
-                        alert("账号或密码错误")
-                    }
-                })      //获取失败
-                .catch(error=>{
-                    // console.log(error);
-                    alert('网络错误，不能访问');
-                })
             }
             
         },

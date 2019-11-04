@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="admin_dlarea">
     <div class="dth_step_bar">
       <STEP :stepData='stepData'></STEP>
     </div>
@@ -26,44 +26,10 @@
       </div>
     </div>
     <div class="schedual_table">
-      <el-table
-       :data="tableData"
-       style="width: 90%; border: 1px solid red; margin: 1em auto;">
-        <el-table-column
-          fixed
-          prop="date"
-          label="时间">
-        </el-table-column>
-        <el-table-column
-          prop="name"
-          label="周一">
-        </el-table-column>
-        <el-table-column
-          prop="province"
-          label="周二">
-        </el-table-column>
-        <el-table-column
-          prop="city"
-          label="周三">
-        </el-table-column>
-        <el-table-column
-          prop="address"
-          label="周四">
-        </el-table-column>
-        <el-table-column
-          prop="zip"
-          label="周五">
-        </el-table-column>
-        <el-table-column
-          prop="zip"
-          label="周六">
-        </el-table-column>
-        <el-table-column
-          prop="zip"
-          label="周日">
-        </el-table-column>
-      </el-table>
-    </div>
+      <table class="">
+
+      </table>
+    </div> <span class="iconfont iconxiazai"></span>
   </div>
 </template>
 <script>
@@ -79,71 +45,7 @@ export default {
           msg:'课  表  下  载',
           active:3
         },
-        tableData: [{
-          date: '06:30~07:20',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '08:25~09:10',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '09:20~10:05',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '10:20~11:05',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '11:15~12:00',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '14:00~14:45',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '14:55~15:40',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '15:50~16:35',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        }, {
-          date: '16:45~17:30',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        },
-        ],
+        
         p_c_show: true,
         autofocus: true,
         profess_c_dl: '',
@@ -159,13 +61,21 @@ export default {
 </script>
 <style lang="scss">
 @import "../../../assets/css/admin";
+.admin_dlarea {
+  border: 1px solid red;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   .dth_step_bar {
     @extend %step_bar;
+    height: 20%;
+    border: 1px solid red;
   }
   .admin_dl_area {
     position: relative;
     width: 100%;
-    height: 75%;
+    height: auto;
+    border: 1px solid red;
     .admin_dl_btn_bar {
       width: 80%;
       max-width: 500px;
@@ -179,7 +89,21 @@ export default {
   }
   .schedual_table {
     position: relative;
-    border: 1px solid red;
-      
+    width: 80%;
+    height: 65%;
+    left: 0;
+    right: 0;
+    margin: 1em auto;
+    border: 1px solid black;
+    // background-color: white;
   }
+  .iconxiazai {
+    position: absolute;
+    font-size: 40px;
+    right: 1ex;
+    bottom: 1ex;
+    color: #87c488;
+  }
+}
+  
 </style>
