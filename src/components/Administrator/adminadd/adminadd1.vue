@@ -8,9 +8,48 @@
               <div class="text">
                 <div class="inner1">授课日</div>
                 <div class="inner2">选择</div>
+                <div class="data">
+                  <div>星期一</div>
+                  <div>星期二</div>
+                  <div>星期三</div>
+                  <div>星期四</div>
+                  <div>星期五</div>
+                  <div>星期六</div>
+                  <div>星期日</div>
+                </div>
               </div>
-            </div>
+            </div>  
           </div>
+        </div>
+        <div class="right">
+          <div class="main-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>时间</td>
+                            <td>周一</td>
+                            <td>周二</td>
+                            <td>周三</td>
+                            <td>周四</td>
+                            <td>周五</td>
+                            <td>周六</td>
+                            <td>周日</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="item in 6" :key="item">
+                            <td class="table-time">06:30<br>~07:20</td>
+                            <td>JavaScript课程设计</td>
+                            <td>JavaScript课程设计</td>
+                            <td>JavaScript课程设计</td>
+                            <td>JavaScript课程设计</td>
+                            <td>JavaScript课程设计</td>
+                            <td>JavaScript课程设计</td>
+                            <td>JavaScript课程设计</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
         </div>
     </div>
@@ -50,7 +89,7 @@ export default {
     @extend %step_bar;
   }
 </style>
-<style scoped>
+<style scoped lang="scss">
   .main{
     display: flex;
     flex:1;
@@ -74,17 +113,17 @@ export default {
     line-height: 48px;
     cursor: pointer;
   }
-  .main .left .left-main{
+  .left-main{
     width: 200px;
     padding: 20px 20px;
-    margin:auto;
+    margin-top:15%;
     border:1px solid #fff;
     border-radius: 4px;
-    height: 70%;
+    height: 85%;
     display: flex;
     flex-direction: column;
   }
-  .main .left .left-mian .left-main2{
+  .left-main2{
     width: 180px;
     padding: 15px 15px;
     margin:auto;
@@ -132,154 +171,60 @@ export default {
     background: #efc173;
     cursor: default;
   }
-
-  .main .left .left-main .list{
-    flex:1;
-    overflow: auto;
-  }
-  .main .left .left-main .list .list-item{
-    display: flex;
-    border-bottom: 1px solid #fff;
-    height: 50px;
-    align-items: center;
-    cursor: pointer;
-  }
-  .main .left .left-main .list .list-item .names{
-    width: 100px;
-    height: 30px;
-    line-height: 30px;
-    padding: 5px 15px;
-    color: #000000;
-    background: #efc173;
-    border-radius: 4px;
-    cursor: default;
-    position: relative;
-    overflow: hidden;
-  }
-  .classNum{
-    width: 40px;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    cursor: pointer;
-  }
-  .classNum:hover{
-    color:#7ac4e1;
-  }
-  .classNum.active{
-    color:#7ac4e1;
-  }
-  .main .left .left-main .list .list-item .names .joinClass{
-    position: absolute;
-    transform:rotate(-45deg);
-    background: #000;
-    color: #fff;
-    font-size: 12px;
-    width: 66px;
-    right: -22px;
-    height: 30px;
-    line-height: 21px;
-    bottom: -7px;
-  }
-  .main .left .left-main .list .list-item .names .joinClass.active{
-    color:#7ac4e1;
-  }
-  .main .left .left-main .list .list-item .show{
-    width: 70px;
-    height: 50px;
-    line-height: 50px;
-    font-size: 30px;
-    color:#7ac4e1;
-  }
-  .main .line{
-    width: 3px;
-    height: 100%;
-    background: #fff;
-    margin:0px 10px;
-  }
-
-  .main .right{
-    flex: 1;
-    padding: 0px 20px;
-    position: relative;
-  }
-  .main .right-btns{
-    display: flex;
-    position: absolute;
-    height: 40px;
-    line-height: 40px;
-    right: 30px;
-    top: -45px;
-    color: #fff;
-  }
-  .main .right-btns .text{
-    margin-right: 20px;
-  }
-  .main .right-btns .allowd{
-    margin-right: 20px;
-    font-size: 20px;
-    color:#a0d5ab;
-  }
-  .main .right-btns .forbid{
-    font-size: 20px;
-    color:#d81e06;
-  }
-  .main .right .right-line{
-    display: flex;
-    margin-bottom: 5px;
-  }
-  .main .right .right-line:nth-child(1),
-  .main .right .right-line:nth-child(2),
-  .main .right .right-line:nth-child(6){
-    margin-bottom: 10px;
-  }
-  .main .right .right-line:nth-child(4){
-    margin-bottom: 20px;
-  }
-  .main .right .right-item{
-    width: 10.5%;
-    height: 65px;
-    line-height: 65px;
-    margin:0px 1%;
-    color: #000000;
-    background: #efc173;
-    border-radius: 4px;
-    cursor: default;
-    font-size: 22px;
-  }
-  .main .right .line-d .right-item{
-    background: #dcdada;
-  }
-  .main .right .right-item.bule{
-    background: #7ac4e1;
-  }
-  .main .right .right-item .times{
-    line-height: 20px;
-    color:#fff;
-    padding: 2.5px 0px;
-    font-size: 18px;
-  }
-  .main .right .right-item .click{
-    height: 100%;
-  }
-  .main .right .right-item .click .iconfont{
-    font-size: 45px;
-  }
-  .main .right .right-item .click .iconfont.iconmsnui-forbid{
-    color:#d81e06;
-  }
-  .main .right .right-item .click {
-    color:#000;
-  }
-  .iconfont.iconyunxu{
-    color:#17ab79
-  }
-  .upload{
-    width: 100%;
-    height: 80vh;
-    box-sizing: border-box;
-    padding:50px 0;
-    display: flex;
+  .data div{
+    width: 90px;
+    height: 32px;
+    display:flex;
     flex-direction: column;
+    line-height: 32px;
+    text-align: center;
+    color:#564946;
+    background: #efc173;
+    cursor: default;
   }
+  .choice div{
+    width: 90px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    color:#564946;
+    background: #efc173;
+    cursor: default;
+  }
+.main-table{
+        display: flex;
+        color: rgb(81, 69, 69);
+        margin: 0 auto;
+        margin-top: 2%;
+        width: 90%;
+        .table-time{
+            background-color: #cccccc;
+            font-family: 'zzgflh';
+            color: white;
+        }
+        table{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            tr,td{
+                display: inline-flex;
+                justify-content: center;
+                width: 100%;
+            }
+            td{
+                line-height: 2em;
+                margin: 5px 5px;
+                flex-grow: 1;
+                border: 1px solid;
+                border-radius: 5px;
+            }
+            thead td{
+                background-color: rgb(239, 193, 115);   
+            }
+            tbody td{
+                font-family: 'fzchsjt';
+                background-color: rgb(122, 196, 225);
+            }    
+        }
+    }
 </style>
