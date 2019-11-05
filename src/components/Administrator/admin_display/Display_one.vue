@@ -27,7 +27,7 @@
       </div>
     </div>
     <br><br>
-    <!-- 课表内容开始 -->
+    <!-- 课表内容 -->
     <div class="main-table">
       <table>
         <thead>
@@ -108,18 +108,22 @@
         </tbody>
       </table>
     </div>
-    <!-- 课表内容结束 -->
+    <!-- /课表内容 -->
+    <!-- 下一步按钮 -->
     <div class="next" title="下一步">
       <router-link to="/Administrator/Display_two" tag="span"><i><img src="https://upload-images.jianshu.io/upload_images/19325457-b0eba5387a8299b9.png" width="70" height="70"></i></router-link>
     </div>
-    <!-- 测试 -->
+    <!-- /下一步按钮 -->
+    <!-- 上一页按钮 -->
     <div class="shangyiye">
       <i class="iconfont iconshangyiye" style="color: #FFF; font-size:200px;"></i>
     </div>
+    <!-- /上一页按钮 -->
+    <!-- 下一页按钮 -->
     <div class="xiayiye">
       <i class="iconfont iconfenyexiayiye" style="color: #FFF; font-size:200px;"></i>
     </div>
-    <!-- 测试结束 -->
+    <!-- /下一页按钮 -->
   </div>
 </template>
 <script>

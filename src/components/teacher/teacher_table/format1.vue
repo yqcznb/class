@@ -152,13 +152,20 @@ export default {
   justify-content: center;
   >>>.el-table{
     background: transparent;
+    margin-top: 2%;
   }
   >>>.el-table th {
     background-color: rgb(239, 193, 115);
+    border: 1px solid;
+    color: black;
   }
   >>>.el-table tr {
     font-family: 'fzchsjt';
     background-color: rgb(122, 196, 225);
+  }
+  >>>.el-table td{
+    // border-radius: 5px;
+    border: 1px solid;
   }
 }
 </style>
