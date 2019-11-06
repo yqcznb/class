@@ -26,10 +26,103 @@
       </div>
     </div>
     <div class="schedual_table">
-      <table class="">
+      <!-- 课表内容 -->
+      <div class="main-table">
+        <table>
+          <thead>
+            <tr>
+              <td>时间</td>
+              <td>周一</td>
+              <td>周二</td>
+              <td>周三</td>
+              <td>周四</td>
+              <td>周五</td>
+              <td>周六</td>
+              <td>周日</td>
+            </tr>
+            <br><br>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="table-time1">06:30<br>~07:20</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="table-time2">08:25<br>~10:05</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="table-time3">10:20<br>~12:00</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <br><br>
+            <tr>
+              <td class="table-time4">14:00<br>~15:40</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="table-time5">15:50<br>~17:30</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="table-time6">18:30<br>~20:10</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- /课表内容 -->
+    </div>
+    
+    
+    <!-- 上一页按钮 -->
+    <div class="shangyiye">
+      <i class="iconfont iconshangyiye" style="color: #FFF; font-size:200px;"></i>
+    </div>
+    <!-- /上一页按钮 -->
+    <!-- 下一页按钮 -->
+    <div class="xiayiye">
+      <i class="iconfont iconfenyexiayiye" style="color: #FFF; font-size:200px;"></i>
+    </div>
+    <!-- /下一页按钮 -->
 
-      </table>
-    </div> <span class="iconfont iconxiazai"></span>
+    <span class="iconfont iconxiazai"></span>
   </div>
 </template>
 <script>
@@ -45,7 +138,6 @@ export default {
           msg:'课  表  下  载',
           active:3
         },
-        
         p_c_show: true,
         autofocus: true,
         profess_c_dl: '',
@@ -62,20 +154,20 @@ export default {
 <style lang="scss">
 @import "../../../assets/css/admin";
 .admin_dlarea {
-  border: 1px solid red;
+  // border: 1px solid red;
   width: 100%;
   height: 100%;
   overflow: hidden;
   .dth_step_bar {
     @extend %step_bar;
     height: 20%;
-    border: 1px solid red;
+    // border: 1px solid red;
   }
   .admin_dl_area {
     position: relative;
     width: 100%;
     height: auto;
-    border: 1px solid red;
+    // border: 1px solid red;
     .admin_dl_btn_bar {
       width: 80%;
       max-width: 500px;
@@ -94,7 +186,7 @@ export default {
     left: 0;
     right: 0;
     margin: 1em auto;
-    border: 1px solid black;
+    // border: 1px solid black;
     // background-color: white;
   }
   .iconxiazai {
@@ -106,4 +198,62 @@ export default {
   }
 }
   
+</style>
+
+<style scoped lang="scss">
+.line_bar {
+  margin: 1em auto;
+}
+.main-table {
+  display: flex;
+  color: rgb(81, 69, 69);
+  margin: 0 auto;
+  margin-top: 0%;
+  width: 80%;
+  .table-time {
+    background-color: #cccccc;
+    font-family: 'zzgflh';
+    color: white;
+  }
+  table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    tr,td {
+      display: inline-flex;
+      justify-content: center;
+      width: 100%;
+    }
+    td {
+      line-height: 1.3em;
+      margin: 5px 5px;
+      flex-grow: 1;
+      border: 1px solid;
+      border-radius: 5px;
+    }
+    thead td {
+      background-color: rgb(239, 193, 115);   
+    }
+    tbody td {
+      font-family: 'fzchsjt';
+      background-color: rgb(122, 196, 225);
+    }    
+  }
+}
+</style>
+
+<style scoped>
+  
+  .shangyiye {
+    position: absolute;
+    left: 0px;
+    top: 260px;
+    cursor: pointer;
+  }
+  .xiayiye {
+    position: absolute;
+    right: 0px;
+    top: 260px;
+    cursor: pointer;
+  }
 </style>

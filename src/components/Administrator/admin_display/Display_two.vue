@@ -186,13 +186,21 @@ export default {
 </script>
 <style lang="scss">
 @import "../../../assets/css/admin";
+.admin_dlarea {
+  // border: 1px solid red;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   .dtwo_step_bar {
     @extend %step_bar;
+    height: 20%;
+    // border: 1px solid red;
   }
   .admin_dl_area {
-    position: absolute;
+    position: relative;
     width: 100%;
-    height: 75%;
+    height: auto;
+    // border: 1px solid red;
     .admin_dl_btn_bar {
       width: 80%;
       max-width: 500px;
@@ -204,6 +212,18 @@ export default {
       }
     }
   }
+  .schedual_table {
+    position: relative;
+    width: 80%;
+    height: 65%;
+    left: 0;
+    right: 0;
+    margin: 1em auto;
+    // border: 1px solid black;
+    // background-color: white;
+  }
+  
+}
   
 </style>
 
