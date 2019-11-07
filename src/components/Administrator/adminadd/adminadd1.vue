@@ -9,18 +9,42 @@
                 <div class="inner1">授课日</div>
                 <div class="inner2">选择</div>
                 <div class="data">
-                  <div>星期一</div>
-                  <div>星期二</div>
-                  <div>星期三</div>
-                  <div>星期四</div>
-                  <div>星期五</div>
-                  <div>星期六</div>
-                  <div>星期日</div>
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td>星期一</td>
+                      </tr>
+                      <tr>
+                        <td>星期二</td>
+                      </tr>
+                      <tr>
+                        <td>星期三</td>
+                      </tr>
+                      <tr>
+                        <td>星期四</td>
+                      </tr>
+                      <tr>
+                        <td>星期五</td>
+                      </tr>
+                      <tr>
+                        <td>星期六</td>
+                      </tr>
+                      <tr>
+                        <td>星期日</td>
+                      </tr>                    
+                    </tbody>
+                  </table>                      
                 </div>
+              <div class="left-btn">
+                <div class="next" @click="nextMove">
+                  <i><img src="https://upload-images.jianshu.io/upload_images/19325457-b0eba5387a8299b9.png" width="70px" height="70px"></i>
+                </div>
+              </div>
               </div>
             </div>  
           </div>
         </div>
+        <div class="line"></div>
         <div class="right">
           <div class="main-table">
                 <table>
@@ -39,13 +63,13 @@
                     <tbody>
                         <tr v-for="item in 6" :key="item">
                             <td class="table-time">06:30<br>~07:20</td>
-                            <td>JavaScript课程设计</td>
-                            <td>JavaScript课程设计</td>
-                            <td>JavaScript课程设计</td>
-                            <td>JavaScript课程设计</td>
-                            <td>JavaScript课程设计</td>
-                            <td>JavaScript课程设计</td>
-                            <td>JavaScript课程设计</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                     </tbody>
                 </table>
@@ -109,8 +133,8 @@ export default {
   .main .left .left-btn .next{
     position: absolute;
     width: 50px;
-    height: 50px;
-    line-height: 48px;
+    height: 60px;
+    line-height: 250px;
     cursor: pointer;
   }
   .left-main{
@@ -119,7 +143,7 @@ export default {
     margin-top:15%;
     border:1px solid #fff;
     border-radius: 4px;
-    height: 85%;
+    height: 65%;
     display: flex;
     flex-direction: column;
   }
@@ -132,24 +156,6 @@ export default {
     height: 60%;
     display: flex;
     flex-direction: column;
-  }
-  .main .left .left-main .el-input__icon{
-    cursor: pointer;
-  }
-
-  .main .left .left-main .choice{
-    display: flex;
-    margin-top: 5px;
-    border-bottom: 1px solid #fff;
-    padding-bottom: 5px;
-  }
-  .main .left .left-main .choice .el-select{
-    width: 130px;
-  }
-  .main .left .left-main .choice .text{
-    flex:1;
-    display: flex;
-    justify-content:center;
   }
   .inner1{
     width: 90px;
@@ -171,25 +177,28 @@ export default {
     background: #efc173;
     cursor: default;
   }
-  .data div{
-    width: 90px;
-    height: 32px;
-    display:flex;
-    flex-direction: column;
-    line-height: 32px;
-    text-align: center;
-    color:#564946;
-    background: #efc173;
-    cursor: default;
+.data{
+  float: left;
+}
+.data td{
+  font-family: 'fzchsjt';
+  background-color: rgb(122, 196, 225);
+  line-height: 32px;
+  text-align: center;
+  cursor: default;
+  width: 90px;
+  height: 43px;
   }
-  .choice div{
-    width: 90px;
-    height: 32px;
-    line-height: 32px;
-    text-align: center;
-    color:#564946;
-    background: #efc173;
-    cursor: default;
+.main .line{
+    width: 3px;
+    height: 100%;
+    background: #fff;
+    margin:0px 10px;
+  }
+.main .right{
+    flex: 1;
+    padding: 0px 20px;
+    position: relative;
   }
 .main-table{
         display: flex;

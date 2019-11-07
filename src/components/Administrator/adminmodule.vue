@@ -43,7 +43,7 @@ export default {
     height: 100%;
     // padding: 7ex;
     .line_bar,.settings_choose {
-        min-width: 330px;
+        min-width: 200px;
         display: flex;
         margin: 2em auto;
         margin-bottom: 10em;
