@@ -22,7 +22,7 @@
             </el-tooltip>
           </el-menu-item>
             <el-menu-item index="3" style='padding-left:20px!important;'
-            @click.native="changePage('/teacher/tch_table')">
+            @click.native="changePage('/teacher/tch_table/format1')">
               <el-tooltip class="item" effect="dark" content="课程表" placement="right">
                 <i class="iconfont iconkechengbiao"></i>
             </el-tooltip>
