@@ -18,10 +18,12 @@
         <div class="format">
             <router-view></router-view>
         </div>
+        <!-- <stuTable></stuTable>  -->
     </div>
 </template>
 
 <script>
+import stuTable from './teacher_table/stu_table'
 export default {
     props: {
 
@@ -51,7 +53,7 @@ export default {
         },        
     },
     components: {
-
+        stuTable
     },
 };
 </script>
