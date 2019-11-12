@@ -27,17 +27,34 @@
         </div>
       </div>
       <div style="float: left;">
-        <div style="width: 50px; height: 276px; border: solid 3px white; border-radius: 10px; float: left; position: relative; top: 30px; left: 50px;">
+        <div style="width: 50px; height: 290px; border: solid 3px white; border-radius: 10px; float: left; position: relative; top: 30px; left: 50px;">
           <br>
-          <i class="iconfont iconxuanze" style="color: #FFF; font-size: 30px;"></i>
-          <br><br>
-          <i class="iconfont iconjiaohuan2" style="color: #FFF; font-size: 30px;"></i>
-          <br><br>
-          <i class="iconfont iconyidong" style="color: #FFF; font-size: 30px;"></i>
-          <br><br>
-          <i class="iconfont icondelete" style="color: red; font-size: 30px;"></i>
-          <br><br>
-          <i class="iconfont iconchexiao" style="color: #FFF; font-size: 30px;"></i>
+          <el-tooltip effect="dark" content="选择" placement="right">
+            <div class="xuanze" @click="xuanze">
+              <i id="icon_xuanze" class="iconfont iconxuanze" style="color: #FFF; font-size: 30px;"></i>
+            </div>
+          </el-tooltip>
+          <el-tooltip effect="dark" content="交换" placement="right">
+            <div class="jiaohuan" @click="jiaohuan">
+              <i id="icon_jiaohuan" class="iconfont iconjiaohuan2" style="color: #AAA; font-size: 30px;"></i>
+            </div>
+          </el-tooltip>
+          <el-tooltip effect="dark" content="移动" placement="right">
+            <div class="yidong" @click="yidong">
+              <i id="icon_yidong" class="iconfont iconyidong" style="color: #AAA; font-size: 30px;"></i>
+            </div>
+          </el-tooltip>
+          <el-tooltip effect="dark" content="删除" placement="right">
+            <div class="shanchu" @click="shanchu">
+              <i id="icon_shanchu" class="iconfont icondelete" style="color: #9a0000; font-size: 30px;"></i>
+            </div>
+          </el-tooltip>
+          <el-tooltip effect="dark" content="撤销" placement="right">
+            <div class="chexiao" @click="chexiao">
+              <i id="icon_chexiao" class="iconfont iconchexiao" style="color: #AAA; font-size: 30px;"></i>
+            </div>
+          </el-tooltip>
+
         </div>
         <div style="width: 3px; height: 450px; background: white; float: left; position: relative; left: 100px;"></div>
       </div>
@@ -180,6 +197,66 @@ export default {
     methods:{
       close () {
         this.vm.showDialog = false;
+      },
+      xuanze () {
+        var icon_xuanze = document.getElementById('icon_xuanze');
+        var icon_jiaohuan = document.getElementById('icon_jiaohuan');
+        var icon_yidong = document.getElementById('icon_yidong');
+        var icon_shanchu = document.getElementById('icon_shanchu');
+        var icon_chexiao = document.getElementById('icon_chexiao');
+        icon_xuanze.style.color = "#FFF";
+        icon_jiaohuan.style.color = "#AAA";
+        icon_yidong.style.color = "#AAA";
+        icon_shanchu.style.color = "#9a0000";
+        icon_chexiao.style.color = "#AAA";
+      },
+      jiaohuan () {
+        var icon_xuanze = document.getElementById('icon_xuanze');
+        var icon_jiaohuan = document.getElementById('icon_jiaohuan');
+        var icon_yidong = document.getElementById('icon_yidong');
+        var icon_shanchu = document.getElementById('icon_shanchu');
+        var icon_chexiao = document.getElementById('icon_chexiao');
+        icon_xuanze.style.color = "#AAA";
+        icon_jiaohuan.style.color = "#FFF";
+        icon_yidong.style.color = "#AAA";
+        icon_shanchu.style.color = "#9a0000";
+        icon_chexiao.style.color = "#AAA";
+      },
+      yidong () {
+        var icon_xuanze = document.getElementById('icon_xuanze');
+        var icon_jiaohuan = document.getElementById('icon_jiaohuan');
+        var icon_yidong = document.getElementById('icon_yidong');
+        var icon_shanchu = document.getElementById('icon_shanchu');
+        var icon_chexiao = document.getElementById('icon_chexiao');
+        icon_xuanze.style.color = "#AAA";
+        icon_jiaohuan.style.color = "#AAA";
+        icon_yidong.style.color = "#FFF";
+        icon_shanchu.style.color = "#9a0000";
+        icon_chexiao.style.color = "#AAA";
+      },
+      shanchu () {
+        var icon_xuanze = document.getElementById('icon_xuanze');
+        var icon_jiaohuan = document.getElementById('icon_jiaohuan');
+        var icon_yidong = document.getElementById('icon_yidong');
+        var icon_shanchu = document.getElementById('icon_shanchu');
+        var icon_chexiao = document.getElementById('icon_chexiao');
+        icon_xuanze.style.color = "#AAA";
+        icon_jiaohuan.style.color = "#AAA";
+        icon_yidong.style.color = "#AAA";
+        icon_shanchu.style.color = "red";
+        icon_chexiao.style.color = "#AAA";
+      },
+      chexiao() {
+        var icon_xuanze = document.getElementById('icon_xuanze');
+        var icon_jiaohuan = document.getElementById('icon_jiaohuan');
+        var icon_yidong = document.getElementById('icon_yidong');
+        var icon_shanchu = document.getElementById('icon_shanchu');
+        var icon_chexiao = document.getElementById('icon_chexiao');
+        icon_xuanze.style.color = "#AAA";
+        icon_jiaohuan.style.color = "#AAA";
+        icon_yidong.style.color = "#AAA";
+        icon_shanchu.style.color = "#9a0000";
+        icon_chexiao.style.color = "#FFF";
       }
     }
 }
@@ -290,5 +367,60 @@ export default {
     right: 0px;
     top: 260px;
     cursor: pointer;
+  }
+  .xuanze {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    outline: none;
+  }
+  .xuanze:hover {
+    background: #ccc;
+  }
+  .jiaohuan {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    outline: none;
+  }
+  .jiaohuan:hover {
+    background: #ccc;
+  }
+  .yidong {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    outline: none;
+  }
+  .yidong:hover {
+    background: #ccc;
+  }
+  .shanchu {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    outline: none;
+  }
+  .shanchu:hover {
+    background: #ccc;
+  }
+  .chexiao {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    outline: none;
+  }
+  .chexiao:hover {
+    background: #ccc;
   }
 </style>
