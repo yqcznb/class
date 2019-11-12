@@ -15,7 +15,9 @@ import Display_one from '@/components/Administrator/admin_display/Display_one'
 import Display_two from '@/components/Administrator/admin_display/Display_two'
 import Display_three from '@/components/Administrator/admin_display/Display_three'
 
-import adminadd from '@/components/Administrator/adminadd'
+import adminadd1 from '@/components/Administrator/adminadd/adminadd1'
+import adminadd2 from '@/components/Administrator/adminadd/adminadd2'
+import adminadd3 from '@/components/Administrator/adminadd/adminadd3'
 import adminmodule from '@/components/Administrator/adminmodule'
 
 import format1 from '@/components/teacher/teacher_table/format1'
@@ -145,9 +147,21 @@ export default new Router({
           meta: { adminLogin: true },
         },
         {
-          path: 'adminadd',
-          name: 'adminadd',
-          component: adminadd,
+          path: 'adminadd1',
+          name: 'adminadd1',
+          component: adminadd1,
+          meta: { adminLogin: true },
+        },
+        {
+          path: 'adminadd2',
+          name: 'adminadd2',
+          component: adminadd2,
+          meta: { adminLogin: true },
+        },
+        {
+          path: 'adminadd3',
+          name: 'adminadd3',
+          component: adminadd3,
           meta: { adminLogin: true },
         },
         {
