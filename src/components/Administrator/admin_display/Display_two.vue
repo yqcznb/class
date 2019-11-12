@@ -27,8 +27,7 @@
         </div>
       </div>
       <div style="float: left;">
-        <div style="width: 50px; height: 290px; border: solid 3px white; border-radius: 10px; float: left; position: relative; top: 30px; left: 50px;">
-          <br>
+        <div style="width: 50px; height: 260px; border: solid 3px white; border-radius: 10px; float: left; position: relative; top: 30px; left: 50px; padding: 10px 0px;">
           <el-tooltip effect="dark" content="选择" placement="right">
             <div class="xuanze" @click="xuanze">
               <i id="icon_xuanze" class="iconfont iconxuanze" style="color: #FFF; font-size: 30px;"></i>
@@ -88,13 +87,13 @@
               </tr>
               <tr>
                 <td class="table-time2">08:25<br>~10:05</td>
-                <td>课程A<div style="position: relative; left:17%; top:50%; cursor: pointer;" @click="vm.showDialog=true"><i class="iconfont iconbi" style="color: #FFF; font-size: 20px;"></i></div></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td id="td1" ondrop="drop(event)" ondragover="allowDrop(event)"><span id="span1" draggable="true" ondragstart="drag(event)">课程A</span><div style="position: relative; left:17%; top:50%; cursor: pointer;" click="vm.showDialog=true"><i class="iconfont iconbi" style="color: #FFF; font-size: 20px;"></i></div></td>
+                <td id="td2" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="td3" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="td4" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="td5" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="td6" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="td7" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
               </tr>
               <tr>
                 <td class="table-time3">10:20<br>~12:00</td>
@@ -233,6 +232,7 @@ export default {
         icon_yidong.style.color = "#FFF";
         icon_shanchu.style.color = "#9a0000";
         icon_chexiao.style.color = "#AAA";
+
       },
       shanchu () {
         var icon_xuanze = document.getElementById('icon_xuanze');
@@ -246,7 +246,7 @@ export default {
         icon_shanchu.style.color = "red";
         icon_chexiao.style.color = "#AAA";
       },
-      chexiao() {
+      chexiao () {
         var icon_xuanze = document.getElementById('icon_xuanze');
         var icon_jiaohuan = document.getElementById('icon_jiaohuan');
         var icon_yidong = document.getElementById('icon_yidong');
@@ -257,6 +257,17 @@ export default {
         icon_yidong.style.color = "#AAA";
         icon_shanchu.style.color = "#9a0000";
         icon_chexiao.style.color = "#FFF";
+      },
+      allowDrop (ev) {
+	      ev.preventDefault();
+      },
+      drag (ev) {
+	      ev.dataTransfer.setData("Text",ev.target.id);
+      },
+      drop (ev) {
+	      ev.preventDefault();
+	      var data=ev.dataTransfer.getData("Text");
+	      ev.target.appendChild(document.getElementById(data));
       }
     }
 }
