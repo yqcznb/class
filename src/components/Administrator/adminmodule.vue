@@ -5,11 +5,13 @@
         </div>
         <div class="settings_choose">
             <div class="settings_download_pass" @click = "set_up_pass_confirm">
-                <span class="iconfont iconiconfontxiazai"></span> <span class="set_up_pass_title">下载模块</span>
+                <span class="iconfont iconiconfontxiazai"></span> <span class="set_up_pass_title">下载模板</span>
             </div>
-            <div class="settings_upload" @click="set_sign_confirm">
+            <el-upload class="upload-demo"  ref="upload" :action="action" :show-file-list='false' :multiple='true'>
+            <div class="settings_upload" @click="fnTwo">
                 <span class="iconfont iconiconfontshangchuan"></span> <span class="set_sign_title">上传信息</span>
             </div>
+            </el-upload>
         </div>
     </div>
 </template>
@@ -18,8 +20,8 @@ export default {
     name: 'App',
     data () {
         return {
-        
         }
+    action:{}
     },
     // created() {
         
@@ -31,8 +33,13 @@ export default {
         
     // },
     methods: {
-        
-        },
+      fnOne(){
+
+      },
+      fnTwo(){
+
+      },
+    }
         
 }
 </script>

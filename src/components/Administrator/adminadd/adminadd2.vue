@@ -53,13 +53,13 @@
                     <tbody>
                         <tr v-for="item in 6" :key="item">
                             <td class="table-time">06:30<br>~07:20</td>
-                            <td>JavaScript课程设计</td>
-                            <td>JavaScript课程设计</td>
-                            <td>JavaScript课程设计</td>
-                            <td>JavaScript课程设计</td>
-                            <td>JavaScript课程设计</td>
-                            <td>JavaScript课程设计</td>
-                            <td>JavaScript课程设计</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                     </tbody>
                 </table>
@@ -76,7 +76,7 @@ export default {
     data () {
         return {
           stepData:{
-          list:[{index:1,to:'/Administrator/adminadd/adminadd1'},{index:2,to:'/Administrator/adminadd/adminadd2'},{index:3,to:'/Administrator/adminadd/adminadd3'}],
+          list:[{index:1,to:'/Administrator/adminadd1'},{index:2,to:'/Administrator/adminadd2'},{index:3,to:'/Administrator/adminadd3'}],
           msg:'课 时 设 置',
           active:2
         }
@@ -124,7 +124,7 @@ export default {
     position: absolute;
     width: 50px;
     height: 60px;
-    line-height: 300px;
+    line-height: 250px;
     cursor: pointer;
   }
   .left-main{
@@ -170,14 +170,25 @@ export default {
 .data1{
   float: left;
 }
-.data td{
+.data1 td{
   font-family: 'fzchsjt';
   background-color: rgb(122, 196, 225);
-  line-height: 32px;
+  line-height: 75px;
   text-align: center;
   cursor: default;
-  width: 90px;
-  height: 75px;
+  width: 84px;
+  height: 50px;
+  }
+.main .line{
+    width: 3px;
+    height: 100%;
+    background: #fff;
+    margin:0px 10px;
+  }
+.main .right{
+    flex: 1;
+    padding: 0px 20px;
+    position: relative;
   }
 .main-table{
         display: flex;

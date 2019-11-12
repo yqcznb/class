@@ -8,29 +8,29 @@
               <div class="text">
                 <div class="inner1">授课日</div>
                 <div class="inner2">选择</div>
-                <div class="data">
+                <div class="data2">
                   <table>
                     <tbody>
                       <tr>
-                        <td>星期一</td>
+                        <td>早</td>
                       </tr>
                       <tr>
-                        <td>星期二</td>
+                        <td>上午一</td>
                       </tr>
                       <tr>
-                        <td>星期三</td>
+                        <td>上午二</td>
                       </tr>
                       <tr>
-                        <td>星期四</td>
+                        <td>午休</td>
                       </tr>
                       <tr>
-                        <td>星期五</td>
+                        <td>下午一</td>
                       </tr>
                       <tr>
-                        <td>星期六</td>
+                        <td>下午二</td>
                       </tr>
                       <tr>
-                        <td>星期日</td>
+                        <td>晚</td>
                       </tr>                    
                     </tbody>
                   </table>                      
@@ -86,8 +86,8 @@ export default {
     data () {
         return {
           stepData:{
-          list:[{index:1,to:'/Administrator/adminadd/adminadd1'},{index:2,to:'/Administrator/adminadd/adminadd2'},{index:3,to:'/Administrator/adminadd/adminadd3'}],
-          msg:'作 息 时 间 设 置',
+          list:[{index:1,to:'/Administrator/adminadd1'},{index:2,to:'/Administrator/adminadd2'},{index:3,to:'/Administrator/adminadd3'}],
+          msg:'作息时间设置',
           active:3
         }
         }
@@ -177,16 +177,16 @@ export default {
     background: #efc173;
     cursor: default;
   }
-.data{
+.data2{
   float: left;
 }
-.data td{
+.data2 td{
   font-family: 'fzchsjt';
   background-color: rgb(122, 196, 225);
   line-height: 32px;
   text-align: center;
   cursor: default;
-  width: 90px;
+  width: 84px;
   height: 43px;
   }
 .main .line{

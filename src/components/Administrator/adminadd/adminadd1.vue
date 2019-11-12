@@ -86,7 +86,7 @@ export default {
     data () {
         return {
           stepData:{
-          list:[{index:1,to:'/Administrator/adminadd/adminadd1'},{index:2,to:'/Administrator/adminadd/adminadd2'},{index:3,to:'/Administrator/adminadd/adminadd3'}],
+          list:[{index:1,to:'/Administrator/adminadd1'},{index:2,to:'/Administrator/adminadd2'},{index:3,to:'/Administrator/adminadd3'}],
           msg:'授 课 日 设 置',
           active:1
         }
@@ -186,7 +186,7 @@ export default {
   line-height: 32px;
   text-align: center;
   cursor: default;
-  width: 90px;
+  width: 84px;
   height: 43px;
   }
 .main .line{
