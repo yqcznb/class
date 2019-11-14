@@ -87,7 +87,7 @@
               </tr>
               <tr>
                 <td class="table-time2">08:25<br>~10:05</td>
-                <td id="td1" ondrop="drop(event)" ondragover="allowDrop(event)"><span id="span1" draggable="true" ondragstart="drag(event)">课程A</span><div style="position: relative; left:17%; top:50%; cursor: pointer;" click="vm.showDialog=true"><i class="iconfont iconbi" style="color: #FFF; font-size: 20px;"></i></div></td>
+                <td id="td1" ondrop="drop(event)" ondragover="allowDrop(event)"><span id="span1" draggable="true" ondragstart="drag(event)">课程A</span><div style="position: relative; left:17%; top:50%; cursor: pointer;" @click="vm.showDialog=true"><i class="iconfont iconbi" style="color: #FFF; font-size: 20px;"></i></div></td>
                 <td id="td2" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
                 <td id="td3" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
                 <td id="td4" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
