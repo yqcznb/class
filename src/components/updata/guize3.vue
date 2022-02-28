@@ -47,8 +47,9 @@
             </div>
           </div>
           <div class="left-btn">
-            <div class="next" @click="nextMove">
-              <i><img src="https://upload-images.jianshu.io/upload_images/19325457-b0eba5387a8299b9.png" width="70px" height="70px"></i>
+            <div class="next"  title="下一步"  @click="nextMove">
+              <router-link to="/Administrator/Display_one"><i><img src="https://upload-images.jianshu.io/upload_images/19325457-b0eba5387a8299b9.png" width="70px" height="70px"></i></router-link>
+              
             </div>
           </div>
         </div>
@@ -136,6 +137,7 @@ export default {
         }
       },
       // 选择或反选
+      ///此处标记选中id进行下一步操作
       choice(id){
         let index = this.listChoice.indexOf(id);
         if(index == -1){
@@ -143,6 +145,7 @@ export default {
         }else{
           this.listChoice.splice(index,1);
         }
+        
       },
       // 选择时间
       clickNode(key,index){
